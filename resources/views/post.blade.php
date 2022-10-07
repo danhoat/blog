@@ -11,6 +11,8 @@
         </p>
 
     </article>
-    <a href="/">Go Back</a>
+    <div class="breadcrumb">
+        <a href="/">Go Back</a>
+    </div>
 
 @endsection

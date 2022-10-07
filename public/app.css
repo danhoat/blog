@@ -13,10 +13,12 @@ article, .content,.breadcrumb{
 article + article{
     margin-top: 2rem;
     padding-top: 2rem;
-    border-top: 1px solid #c5c5c5;
+    border-top: 1px solid #e1e1e1;
 }
 article .title{
     font-size: 23px;
+    padding: 0;
+    margin:0;
 }
 h1{
     font-size: 25px;
@@ -43,7 +45,7 @@ a{
 .foobar{
 }
 header{
-    border-bottom: 1px solid #c5c5c5;
+    border-bottom: 1px solid #e1e1e1;
     padding: 15px 0;
     margin-bottom: 30px;
 }
