@@ -11,7 +11,7 @@
         <article class="{{ $loop->even ? 'foobar': 'noEvent'}}">
             <h2 class="title"><a href="<?php echo url('/');?>/posts/{{$post->slug}}">{{ $post->title}}</a></h2>
 
-            <p> {!! $post->excerpt !!}</p>
+            <p class="excerpt"> {!! $post->excerpt !!}</p>
             {{--<p>Category: {{$post->cate_name}}</>--}}
 
 

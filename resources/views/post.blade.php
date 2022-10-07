@@ -2,7 +2,7 @@
 @section('content')
 
     <article>
-        <h1> <?= $post->title; ?></h1>
+        <h1 class="title"> <?= $post->title; ?></h1>
 
         <p> {!! $post->content !!}</p>
         <p class="postinfo">
