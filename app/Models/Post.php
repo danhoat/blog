@@ -16,20 +16,17 @@ class Post
     }
     static function all(){
         $files = File::files(resource_path("posts/"));
-        $post = [];
-        foreach ($files as $file) {
-            $document = YamlFrontMatter::parseFile($file);
-
-            $posts[] = new Post(
-                $document->title,
-                $document->excerpt,
-                $document->date,
-                $document->link,
-                $document->body(),
-            );
-        }
-        //}, $files);
-
+        $posts = collect($files)->map(
+            function($file) {
+                $document = YamlFrontMatter::parseFile($file);
+                return new Post(
+                    $document->title,
+                    $document->excerpt,
+                    $document->date,
+                    $document->link,
+                    $document->body(),
+                );
+            })->sortBy('date');
         return $posts;
 
     }
