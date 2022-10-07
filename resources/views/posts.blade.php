@@ -13,7 +13,8 @@
 
         <?php foreach($posts as $post): ?>
         <article>
-           <?= $post ?>
+            <h2><?php echo $post->title; ?></h2>
+            <p><?php echo $post->excerpt; ?></p>
         </article>
         <?php endforeach; ?>
 
