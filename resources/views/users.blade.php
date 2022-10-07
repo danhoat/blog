@@ -1,7 +1,11 @@
 @extends('layout')
 @section('content')
+    <div class="breadcrumb">
+        <h1> List Users</h1>
+    </div>
     <div class="content">
-    <h1> List Users</h1>
+
+
     @if(count($users) > 0)
         <table>
             <tr>
