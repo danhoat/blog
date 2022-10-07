@@ -1,0 +1,2 @@
+php artisan migrate:refresh
+==> remove all table was created.
