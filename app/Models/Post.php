@@ -16,20 +16,22 @@ class Post
         $this->content  = $content;
     }
     static function all(){
-        $files = File::files(resource_path("posts/"));
-        $posts = collect($files)->map(
-            function($file) {
-                $document = YamlFrontMatter::parseFile($file);
-                return new Post(
-                    $document->title,
-                    $document->excerpt,
-                    $document->date,
-                    $document->link,
-                    $document->author,
-                    $document->body(),
-                );
-            })->sortBy('date');
-        return $posts;
+
+        return cache()->rememberForever('posts.all', function(){
+            $files = File::files(resource_path("posts/"));
+            return collect($files)->map(
+                function($file) {
+                    $document = YamlFrontMatter::parseFile($file);
+                    return new Post(
+                        $document->title,
+                        $document->excerpt,
+                        $document->date,
+                        $document->link,
+                        $document->author,
+                        $document->body(),
+                    );
+                })->sortBy('date');
+        });
 
     }
     static function find($slug){
