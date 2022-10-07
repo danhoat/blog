@@ -19,6 +19,7 @@ class PostSeeder extends Seeder
         DB::table('posts')->insert([
             'title'      => 'My First Post',
             'slug'     => 'my-first-post',
+            'category_id' => 1,
             'author' =>  'Kent Nguyen',
             'excerpt'  => 'Excerpt of my first post',
             'content' => ' Full content  of my first post'
@@ -27,6 +28,7 @@ class PostSeeder extends Seeder
         DB::table('posts')->insert([
             'title'      => 'My Second Post',
             'slug'     => 'my-second-post',
+            'category_id' => 2,
             'author' =>  'Dan Nguyen',
             'excerpt'  => 'Excerpt of my second post',
             'content' => ' Full content  of my first post'

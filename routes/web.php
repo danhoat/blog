@@ -28,6 +28,8 @@ Route::get('posts/{post}', function ($slug) {
 
     //$post = Post::($slug);
     $post = DB::table('posts')->where('slug', $slug)->first();
+
+
     return view('post',[
         'post' => $post
     ]);

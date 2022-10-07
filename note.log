@@ -26,3 +26,9 @@ php artisan db:seed --class PostSeeder
 
 
 php artisan make:model Post
+
+Categories:
+
+php artisan make:migration create_categories_table
+
+php artisan make:model Category
