@@ -11,16 +11,17 @@
     </head>
     <body class="antialiased">
 
-        <?php foreach($posts as $post): ?>
-        <article>
-            <h2><a href="posts/{{$post->link}}"><?php echo $post->title; ?></a></h2>
-            <p><?php echo $post->excerpt; ?></p>
+        @foreach($posts as $post)
+
+        <article class="{{ $loop->even ? 'foobar': 'noEvent'}}">
+            <h2><a href="posts/{{$post->link}}">{{ $post->title}}</a></h2>
+            <p>{{$post->excerpt}}</p>
             <p class="postinfo">
                 <span class="post-author">Author: {{ $post->author}}</span>
                 <span class="post-time">Date: {{ $post->date}}</span>
             </p>
         </article>
-        <?php endforeach; ?>
+        @endforeach;
 
     </body>
 </html>

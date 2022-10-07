@@ -17,7 +17,7 @@ class Post
     }
     static function all(){
 
-        return cache()->remember('posts.all_',9, function(){
+        return cache()->remember('posts.all_',0, function(){
             $files = File::files(resource_path("posts/"));
             return collect($files)->map(
                 function($file) {
