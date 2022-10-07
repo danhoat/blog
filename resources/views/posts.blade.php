@@ -4,7 +4,7 @@
         @foreach($posts as $post)
 
         <article class="{{ $loop->even ? 'foobar': 'noEvent'}}">
-            <h2><a href="posts/{{$post->slug}}">{{ $post->title}}</a></h2>
+            <h2 class="title"><a href="posts/{{$post->slug}}">{{ $post->title}}</a></h2>
 
             <p> {!! $post->excerpt !!}</p>
             {{--<p>Category: {{$post->cate_name}}</>--}}
