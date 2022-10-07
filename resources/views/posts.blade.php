@@ -8,7 +8,7 @@
 
             <p> {!! $post->excerpt !!}</p>
             {{--<p>Category: {{$post->cate_name}}</>--}}
-            <p>Category: {!!  $post->category->name !!}</p>
+            <p>Category:<a href="categories/{!!  $post->category->slug !!}"> {!!  $post->category->name !!} </a></p>
 
             <p class="postinfo">
                 <span class="post-author">Author: {{ $post->author}}</span>

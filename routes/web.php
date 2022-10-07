@@ -1,5 +1,6 @@
 <?php
 use App\Models\Post;
+use App\Models\Category;
 use App\Models\User;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -14,6 +15,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('categories/{category}', function ( Category  $category) {
+
+    $posts = Post::all();
+    return view('posts',[
+        'posts' => $post
+    ]);
+});
 
 Route::get('/', function () {
     //$posts = Post::list();
@@ -42,5 +50,9 @@ Route::get('users', function () {
         'users' => $users,
     ]);
 });
+
+
+
+
 
 Route::get("users",[UserController::class,'list']);
