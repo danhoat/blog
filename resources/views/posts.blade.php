@@ -10,10 +10,17 @@
         <script src="app.js"></script>
     </head>
     <body class="antialiased">
+        <?php //echo base_path();?>
+        <?php
+       // echo APP_URL;
+        //echo url();
+        echo config('app.url');
 
+        ?>
+        <?php //echo app_path();?>;
         <?php foreach($posts as $post): ?>
         <article>
-            <h2><?php echo $post->title; ?></h2>
+            <h2><a href="posts/{{$post->link}}"><?php echo $post->title; ?></a></h2>
             <p><?php echo $post->excerpt; ?></p>
         </article>
         <?php endforeach; ?>

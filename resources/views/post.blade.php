@@ -12,10 +12,12 @@
     <body class="antialiased">
 
             <article>
-                <?= $post ?>
+                <h1> <?= $post->title; ?></h1>
+                <p><?= $post->content; ?></p>
+
             </article>
-           <a href="/">Go Back</a>   
-       
+           <a href="/">Go Back</a>
+
     </body>
 
 </html>

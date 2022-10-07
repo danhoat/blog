@@ -7,11 +7,12 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 class Post
 {
-    function __construct($title, $excerpt,  $date, $content){
-        $this->title   = $title;
-        $this->excerpt = $excerpt;
-        $this->date    = $date;
-        $this->content = $content;
+    function __construct($title, $excerpt, $date, $link, $content){
+        $this->title    = $title;
+        $this->excerpt  = $excerpt;
+        $this->date     = $date;
+        $this->link     = $link;
+        $this->content  = $content;
     }
     static function all(){
         $files = File::files(resource_path("posts/"));
@@ -23,6 +24,7 @@ class Post
                 $document->title,
                 $document->excerpt,
                 $document->date,
+                $document->link,
                 $document->body(),
             );
         }
@@ -39,6 +41,16 @@ class Post
             throw new ModelNotFoundException();
             return redirect('/');
         }
+        $document = $document = YamlFrontMatter::parseFile($path);
+
+        return new Post(
+            $document->title,
+            $document->excerpt,
+            $document->date,
+            $document->link,
+            $document->body(),
+        );
+
         return cache()->remember("posts.{$slug}",0, fn()=> file_get_contents($path) );
 
     }
