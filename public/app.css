@@ -1,4 +1,4 @@
-h1, h2, h3, h4, p, ul, li, ol, table, span, strong{
+html, body, h1, h2, h3, h4, p, ul, li, ol, table, span, strong{
     margin:0;
     padding: 0;
 }
@@ -126,5 +126,5 @@ footer{
     border-top: 1px solid #eee;
 }
 footer h2{
-    line-height: 60px;
+    line-height: 65px;
 }
