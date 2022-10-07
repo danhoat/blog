@@ -11,8 +11,8 @@ article, .content,.breadcrumb{
     padding:0 15px 10px 15px;
 }
 article + article{
-    margin-top: 2rem;
-    padding-top: 2rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
     border-top: 1px solid #e1e1e1;
 }
 article .title{
@@ -41,6 +41,10 @@ a{
 .postinfo{
     text-align: right;
     text-transform: capitalize;
+}
+.postinfo .post-cat{
+    text-align: left;
+    float: left;
 }
 .foobar{
 }

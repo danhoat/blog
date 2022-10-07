@@ -13,9 +13,10 @@
 
             <p> {!! $post->excerpt !!}</p>
             {{--<p>Category: {{$post->cate_name}}</>--}}
-            <p>Category:<a href="<?php echo url('/categories');?>/{!!  $post->category->slug !!}"> {!!  $post->category->name !!} </a></p>
+
 
             <p class="postinfo">
+                <span class="post-cat">Category:<a href="<?php echo url('/categories');?>/{!!  $post->category->slug !!}"> {!!  $post->category->name !!} </a></span>
                 <span class="post-author">Author: {{ $post->author}}</span>
                 <span class="post-time">Date: {{ $post->published_at}}</span>
             </p>
