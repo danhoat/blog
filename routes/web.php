@@ -15,13 +15,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('categories/{category}', function ( Category  $category) {
 
-    $posts = Post::all();
-    return view('posts',[
-        'posts' => $post
-    ]);
-});
 
 Route::get('/', function () {
     //$posts = Post::list();
@@ -51,6 +45,13 @@ Route::get('users', function () {
     ]);
 });
 
+Route::get('categories/{category:slug}', function (Category $category) {
+
+
+    return view('posts',[
+        'posts' => $category->posts
+    ]);
+});
 
 
 

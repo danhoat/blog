@@ -19,7 +19,7 @@ class Post extends Model
 
     }
 
-    protected $appends = ['cate_name','zipcode'];
+    protected $appends = ['cate_name'];
 
     static function all($columns = ['*']){
         $posts = parent::all();
