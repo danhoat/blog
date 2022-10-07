@@ -11,11 +11,11 @@ class Post extends Model
     protected $attributes = array(
         'ZipCode' => '',
     );
-    protected  $cats = array();
+    //protected  $cats = array();
     public function __construct(array $attributes = [])
     {
         parent::__construct($attributes);
-        $this->cats = Category::all();
+        //$this->cats = Category::all();
 
     }
 
@@ -28,7 +28,7 @@ class Post extends Model
     public function getCateNameAttribute(){
 
         $this->cat_name= $this->title;
-        $this->cat_name = $this->cats->where('id', $this->category_id)->first()->name;
+       // $this->cat_name = $this->cats->where('id', $this->category_id)->first()->name;
 
         return  $this->cat_name;
 

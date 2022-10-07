@@ -18,7 +18,10 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    //$posts = Post::list();
+
+    Illuminate\Support\Facades\DB::listen(function ($query){
+        logger($query->sql);
+    });
     $posts = Post::all();
 
     return view('posts',[
@@ -26,15 +29,14 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('posts/{post}', function ($slug) {
+Route::get('posts/{post:slug}', function (Post $post) {
 
-    $post = DB::table('posts')->where('slug', $slug)->first();
-
+   // $post = DB::table('posts')->where('slug', $slug)->first();
 
     return view('post',[
         'post' => $post
     ]);
-})->where('post','[A-z\-]+');
+});
 
 Route::get('users', function () {
     $users = User::list();
