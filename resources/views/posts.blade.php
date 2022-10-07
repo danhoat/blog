@@ -1,6 +1,11 @@
 @extends('layout')
 @section('content')
+    @if( !empty($is_cat))
+        <div class="breadcrumb">
+        Category: {{$is_cat->name}}
+        </div>
 
+    @endif
         @foreach($posts as $post)
 
         <article class="{{ $loop->even ? 'foobar': 'noEvent'}}">
