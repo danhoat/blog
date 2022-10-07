@@ -12,13 +12,13 @@
 <body class="antialiased">
     <header>
         <ul class="menu">
-            <li> Home</li>
-            <li> Posts</li>
-            <li> About Us</li>
+            <li> <a href="/"> Home </li></li>
+            <li> <a href="/">Posts</a></li>
+            <li> <a href="#" >About Us </a></li>
+
         </ul>
     </header>
     @yield('content')
-
 </body>
 
 </html>
