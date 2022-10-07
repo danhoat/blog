@@ -7,11 +7,12 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 class Post
 {
-    function __construct($title, $excerpt, $date, $link, $content){
+    function __construct($title, $excerpt, $date, $link, $author , $content){
         $this->title    = $title;
         $this->excerpt  = $excerpt;
         $this->date     = $date;
         $this->link     = $link;
+        $this->author     = $author;
         $this->content  = $content;
     }
     static function all(){
@@ -24,6 +25,7 @@ class Post
                     $document->excerpt,
                     $document->date,
                     $document->link,
+                    $document->author,
                     $document->body(),
                 );
             })->sortBy('date');
@@ -45,6 +47,7 @@ class Post
             $document->excerpt,
             $document->date,
             $document->link,
+            $document->author,
             $document->body(),
         );
 

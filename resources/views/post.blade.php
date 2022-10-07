@@ -14,6 +14,7 @@
             <article>
                 <h1> <?= $post->title; ?></h1>
                 <p><?= $post->content; ?></p>
+                <span class="post-time"><?php echo $post->date;?></span>
 
             </article>
            <a href="/">Go Back</a>

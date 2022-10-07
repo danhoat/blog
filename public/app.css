@@ -14,3 +14,14 @@ a{
     text-decoration: none;
     color: #000;
 }
+.post-time{
+    text-align: right;
+    font-style: italic;
+    display: inline-block;
+    font-size: 90%;
+    margin-left: 30px;
+
+}
+.postinfo{
+    text-align: right;
+}
