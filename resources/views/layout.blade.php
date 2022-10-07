@@ -11,13 +11,15 @@
 </head>
 <body class="antialiased">
     <header>
-        <ul class="menu">
-            <li> <a href="/"> Home </li></li>
-            <li> <a href="/">Posts</a></li>
-            <li> <a href="#" >About Us </a></li>
-            <li> <a href="/users" >List Users</a></li>
+        <div class="header">
+            <ul class="menu">
+                <li> <a href="/"> Home </li></li>
+                <li> <a href="/">Posts</a></li>
+                <li> <a href="#" >About Us </a></li>
+                <li> <a href="/users" >List Users</a></li>
 
-        </ul>
+            </ul>
+        </div>
     </header>
     <div class="container">
     @yield('content')

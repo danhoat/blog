@@ -1,12 +1,14 @@
 .container{
+    min-height: 73vh;
+}
+.header, .container{
     width: 1200px;
     margin: 0 auto;
-    min-height: 72vh;
 }
 article{
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 10px;
+}
+article, .content{
+    padding:0 15px 10px 15px;
 }
 article + article{
     margin-top: 2rem;
@@ -55,6 +57,9 @@ header{
 .menu li{
     display: inline-block;
     padding: 10px; 5px
+}
+.menu li:first-child{
+    padding-left: 0;
 }
 .pagination nav{
     float: right;
