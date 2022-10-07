@@ -1,7 +1,7 @@
 @extends('layout')
 @section('content')
     <h1> List Users</h1>
-    @if($users)
+    @if(count($users) > 0)
         <table>
             <tr>
                 <th>ID</th>
@@ -25,8 +25,9 @@
                 </nav>
             </div>
         </div>
-
+        
     @else
+
         No user found
     @endif
 
