@@ -19,7 +19,12 @@
 
         </ul>
     </header>
+    <div class="container">
     @yield('content')
+    </div>
+    <footer>
+        <center> <h2>Laravel Blog Footer</h2> </center>
+    </footer>
 </body>
 
 </html>
