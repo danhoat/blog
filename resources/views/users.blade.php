@@ -11,7 +11,7 @@
         <div class="container mt-5">
             <div class="d-flex justify-content-center pagination">
                 <!-- {!! $users->links() !!} -->
-                <nav aria-label="Page navigation example">
+                <nav aria-label="Page navigation example" class="pagination">
                     {{ $users->render("pagination::default") }}
                 </nav>
             </div>
