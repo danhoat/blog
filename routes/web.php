@@ -25,7 +25,7 @@ Route::get('/', function () {
 });
 
 Route::get('posts/{post}', function ($slug) {
-    
+
     $post = DB::table('posts')->where('slug', $slug)->first();
 
 

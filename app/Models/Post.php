@@ -33,13 +33,9 @@ class Post extends Model
         return  $this->cat_name;
 
     }
-    public function getZipCodeAttribute(){
-        return 'ZipCode ok';
-    }
-    public function setCoverokAttribute(){
-        $this->coverok= '222';
 
-        return '111 ok 222';
+    public function category(){
+        return $this->belongsTo(Category::class);
     }
 
     static function list(){
