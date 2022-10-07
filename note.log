@@ -1,2 +1,25 @@
 php artisan migrate:refresh
 ==> remove all table was created.
+
+
+
+php artisan make:migration create_posts_table
+
+==> still not create the table "posts" in mysql database.
+It auto generate a .php file with name: 2022_10_07_133053_create_posts_table.php
+open 2022_10_07_133053_create_posts_table.php file to define columns for table posts.migrate
+
+sau khi define xong.migrate
+RUn:
+php artisan migrate
+==> Tao table posts with columns done.
+
+
+
+php artisan make:seeder PostSeeder
+==> create file database/seeder/PostSeeder.php file
+
+=> define sample data in PostSeeder.php then run this:
+
+php artisan db:seed --class PostSeeder
+==> Excute sql query and insert database to Posts table.

@@ -11,6 +11,9 @@ article + article{
     padding-top: 3rem;
     border-top: 1px solid #c5c5c5;
 }
+h1{
+    font-size: 25px;
+}
 p{
     line-height: 1.6;
 }

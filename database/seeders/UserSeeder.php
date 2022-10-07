@@ -19,15 +19,42 @@ class Userseeder extends Seeder
     {
         //
         DB::table('users')->insert([
-            'username'      => 'abc',
-            'email'     => 'abc@gmail.com',
+            'username'      => 'ok',
+            'email'     => 'ok@gmail.com',
             'password'  => Hash::make('12345'),
             'is_admin' => 0,
         ]);
-        // DB::table('users')->insert([
-        //     'name'      => 'WordPress',
-        //     'email'     => 'wpcodev@gmail.com',
-        //     'password'  => Hash::make('12345'),
-        // ]);
+        DB::table('users')->insert([
+            'username'      => 'dan nguyen',
+            'email'     => 'dan@gmail.com',
+            'password'  => Hash::make('12345'),
+            'is_admin' => 0,
+        ]);
+
+        DB::table('users')->insert([
+            'username'      => 'Kent nguyen',
+            'email'     => 'kent@gmail.com',
+            'password'  => Hash::make('12345'),
+            'is_admin' => 0,
+        ]);
+
+        DB::table('users')->insert([
+            'username'      => 'Vip nguyen',
+            'email'     => 'vip@gmail.com',
+            'password'  => Hash::make('12345'),
+            'is_admin' => 0,
+        ]);
+        DB::table('users')->insert([
+            'username'      => 'Test Account',
+            'email'     => 'test@gmail.com',
+            'password'  => Hash::make('test'),
+            'is_admin' => 0,
+        ]);
+        DB::table('users')->insert([
+            'username'      => 'Tesla ',
+            'email'     => 'tesla@gmail.com',
+            'password'  => Hash::make('tesla'),
+            'is_admin' => 0,
+        ]);
     }
 }
