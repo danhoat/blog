@@ -25,7 +25,7 @@
                 </nav>
             </div>
         </div>
-        
+
     @else
 
         No user found
