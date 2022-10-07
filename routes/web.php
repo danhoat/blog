@@ -16,8 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    //$posts = Post::list();
     $posts = Post::all();
-
 
     return view('posts',[
         'posts' => $posts,
@@ -26,7 +26,8 @@ Route::get('/', function () {
 
 Route::get('posts/{post}', function ($slug) {
 
-    $post = Post::find($slug);
+    //$post = Post::($slug);
+    $post = DB::table('posts')->where('slug', $slug)->first();
     return view('post',[
         'post' => $post
     ]);

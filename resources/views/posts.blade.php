@@ -11,6 +11,6 @@
                 <span class="post-time">Date: {{ $post->date}}</span>
             </p>
         </article>
-        @endforeach;
+        @endforeach
 @endsection
 

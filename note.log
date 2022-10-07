@@ -23,3 +23,6 @@ php artisan make:seeder PostSeeder
 
 php artisan db:seed --class PostSeeder
 ==> Excute sql query and insert database to Posts table.
+
+
+php artisan make:model Post

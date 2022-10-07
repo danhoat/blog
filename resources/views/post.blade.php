@@ -6,7 +6,7 @@
         <p><?= $post->content; ?></p>
         <p class="postinfo">
             <span class="post-author">Author: {{ $post->author}}</span>
-            <span class="post-time">Date: {{ $post->date}}</span>
+            <span class="post-time">Date: {{ $post->published_at}}</span>
         </p>
 
     </article>
