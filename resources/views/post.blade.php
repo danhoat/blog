@@ -6,7 +6,7 @@
         <title>My Laravel Blog</title>
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="app.css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo asset('app.css');?>" />
         <script src="app.js"></script>
     </head>
     <body class="antialiased">
