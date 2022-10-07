@@ -33,3 +33,17 @@ a{
 .foobar{
     background-color: #ccc;
 }
+header{
+    border-bottom: 1px solid #c5c5c5;
+}
+.menu{
+    text-decoration: none;
+    list-style: none;
+    font-size: 120%;
+    padding: 15px;
+    margin: 0;
+}
+.menu li{
+    display: inline-block;
+    padding: 10px; 15px
+}
