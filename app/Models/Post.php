@@ -17,7 +17,7 @@ class Post
     }
     static function all(){
 
-        return cache()->rememberForever('posts.all', function(){
+        return cache()->remember('posts.all_',9, function(){
             $files = File::files(resource_path("posts/"));
             return collect($files)->map(
                 function($file) {
@@ -30,7 +30,7 @@ class Post
                         $document->author,
                         $document->body(),
                     );
-                })->sortBy('date');
+                })->sortByDesc('date' );
         });
 
     }
