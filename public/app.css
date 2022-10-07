@@ -24,4 +24,5 @@ a{
 }
 .postinfo{
     text-align: right;
+    text-transform: capitalize;
 }
