@@ -1,5 +1,7 @@
 <?php
 use App\Models\Post;
+use App\Models\User;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,3 +31,14 @@ Route::get('posts/{post}', function ($slug) {
         'post' => $post
     ]);
 })->where('post','[A-z\-]+');
+
+Route::get('users', function () {
+    $users = User::list();
+
+
+    return view('users',[
+        'users' => $users,
+    ]);
+});
+
+Route::get("users",[UserController::class,'list']);

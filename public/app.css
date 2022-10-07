@@ -49,3 +49,18 @@ header{
     display: inline-block;
     padding: 10px; 5px
 }
+.pagination{
+    margin: 0;
+    padding: 0;
+}
+.pagination li{
+    list-style: none;
+    display: inline-block;
+    padding: 5px;
+    border: 1px solid #ccc;
+    margin: 0;
+}
+.pagination li span{
+    margin: 0;
+    display: inline;
+}
