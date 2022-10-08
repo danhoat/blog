@@ -21,10 +21,6 @@ class Post extends Model
 
     protected $appends = ['cate_name'];
 
-    static function all($columns = ['*']){
-        $posts = parent::all();
-        return $posts;
-    }
     public function getCateNameAttribute(){
 
         $this->cat_name= $this->title;
@@ -36,10 +32,5 @@ class Post extends Model
 
     public function category(){
         return $this->belongsTo(Category::class);
-    }
-
-    static function list(){
-        $post = Post::all();
-        return $post;
     }
 }
