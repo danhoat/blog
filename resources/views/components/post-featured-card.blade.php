@@ -31,9 +31,7 @@
 
             <div class="text-sm mt-2">
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                   {{$post->exceprt}}
                 </p>
 
                 <p class="mt-4">
@@ -51,7 +49,7 @@
                 </div>
 
                 <div class="hidden lg:block">
-                    <a href="#"
+                    <a href="posts/{{$post->slug}}"
                        class="transition-colors duration-300 text-xs font-semibold bg-gray-200 hover:bg-gray-300 rounded-full py-2 px-8"
                     >Read More</a>
                 </div>
