@@ -26,7 +26,6 @@ class Post extends Model
 
         $this->cat_name= $this->title;
        // $this->cat_name = $this->cats->where('id', $this->category_id)->first()->name;
-        return 999;
         return  $this->cat_name;
 
     }

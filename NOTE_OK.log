@@ -52,3 +52,7 @@ Create make:factory
 php artisan make:factory Post
 php artisan make:factory Category
 php artisan make:factory Faker
+
+***
+php artisan make:model Comment -mf
+(create model + factory comment)

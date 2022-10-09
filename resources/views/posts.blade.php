@@ -19,9 +19,9 @@
 
             <p class="postinfo">
                 @if($post->category)
-                <span class="post-cat">Category:<a href="<?php echo url('/categories');?>/ {!!  $post->category->slug !!}"> {!!  $post->category->name !!} </a></span>
+                <span class="post-cat">Category:<a href="<?php echo url('/categories');?>/{!!  $post->category->slug !!}"> {!!  $post->category->name !!} </a></span>
                 @endif
-                <span class="post-author">Author: {{ $post->author->name}}</span>
+                <span class="post-author">Author: <a href="/author/{{$post->author->slug}}">{{ $post->author->name}}</a></span>
                 <span class="post-time">Date: {{ $post->post_date}}</span>
             </p>
         </article>

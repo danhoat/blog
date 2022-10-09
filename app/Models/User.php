@@ -21,6 +21,7 @@ class User extends Authenticatable
         'username',
         'email',
         'password',
+        'slug'
     ];
 
     /**
@@ -44,6 +45,13 @@ class User extends Authenticatable
     function __construct(array $attributes = [])
     {
         parent::__construct($attributes);
+    }
+    public function getSlugAttribute(){
+        $this->slug= str_slug($this->name);
+        return $this->slug;
+    }
+    public function setSlugAttribute(){
+        $this->slug= str_slug($this->name);
     }
 
 }
