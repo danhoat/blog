@@ -22,10 +22,10 @@ Route::get('/', function () {
     Illuminate\Support\Facades\DB::listen(function ($query){
         logger($query->sql, $query->bindings);
     });
-    $posts = Post::all();
+    //$posts = Post::all();
 
     return view('posts',[
-        'posts' => $posts,
+        'posts' => Post::latest()->with(['category','author'])->get()
     ]);
 });
 
@@ -55,7 +55,12 @@ Route::get('categories/{category:slug}', function (Category $category) {
         'is_cat'=> $category,
     ]);
 });
+Route::get('author/{author}', function (User $author) {
 
+    return view('posts',[
+        'posts' => $author->posts
+    ]);
+});
 
 
 

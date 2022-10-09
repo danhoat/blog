@@ -22,8 +22,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-
-        \App\Models\Post::factory(10)->create();
+//        User::truncate();
+//        Post::truncate();
+//        Category::truncate();
+        $user = User::factory()->create([
+            'name' => 'John Doe'
+        ]);
+        \App\Models\Post::factory(10)->create([
+            'author_id' => $user->id
+            ]
+        );
 
 
        // $name = DB::table('category')->where('name', 'John')->pluck('name');

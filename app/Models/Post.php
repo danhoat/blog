@@ -20,7 +20,7 @@ class Post extends Model
 
     }
 
-    protected $appends = ['cate_name','post_date'];
+    protected $appends = ['category','author','cate_name','post_date'];
 
     public function getCateNameAttribute(){
 
