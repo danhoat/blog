@@ -12,3 +12,4 @@
             Subscribe for Updates
         </a>
     </div>
+</nav>
