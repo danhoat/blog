@@ -8,6 +8,8 @@
     @endif
         @foreach($posts as $post)
 
+
+
         <article class="{{ $loop->even ? 'foobar': 'noEvent'}}">
             <h2 class="title"><a href="<?php echo url('/');?>/posts/{{$post->slug}}">{{ $post->title}}</a></h2>
 
@@ -20,7 +22,7 @@
                 <span class="post-cat">Category:<a href="<?php echo url('/categories');?>/ {!!  $post->category->slug !!}"> {!!  $post->category->name !!} </a></span>
                 @endif
                 <span class="post-author">Author: {{ $post->author->name}}</span>
-                <span class="post-time">Date: {{ $post->created_at}}</span>
+                <span class="post-time">Date: {{ $post->post_date}}</span>
             </p>
         </article>
         @endforeach

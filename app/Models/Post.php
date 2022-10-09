@@ -20,13 +20,13 @@ class Post extends Model
 
     }
 
-    protected $appends = ['cate_name'];
+    protected $appends = ['cate_name','post_date'];
 
     public function getCateNameAttribute(){
 
         $this->cat_name= $this->title;
        // $this->cat_name = $this->cats->where('id', $this->category_id)->first()->name;
-
+        return 999;
         return  $this->cat_name;
 
     }
@@ -36,5 +36,19 @@ class Post extends Model
     }
     public function author(){
         return $this->belongsTo(USER::class);
+    }
+
+
+    public function getPostDateAttribute(){
+
+        $this->post_date = date('M d, Y', strtotime($this->created_at) );
+        return $this->post_date;
+
+    }
+    public function setPostDateAttribute(){
+
+        $this->post_date = date('M d, Y', strtotime($this->created_at) );
+
+
     }
 }
