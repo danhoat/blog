@@ -10,14 +10,18 @@
 
     class PostSeeder extends Seeder
     {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
-    public function run()
+        /**
+         * Run the database seeds.
+         *
+         * @return void
+         */
+        public function run()
+        {
+
+        }
+    public function runaaa()
     {
-        $created_at = Carbon::now();
+        $created_at = Carbon::now(); // or now()
         $length = 200;
         DB::table('posts')->insert([
             'title'         => 'My First Post',
@@ -26,7 +30,8 @@
             'category_id'   => 1,
             'excerpt'        => getRandomText($length),
             'content'       => getRandomText(),
-            'published_at'  => $created_at,
+            'created_at'  => $created_at,
+            'updated_at' => ''
         ]);
 
         DB::table('posts')->insert([
@@ -36,7 +41,8 @@
             'category_id' => 2,
             'excerpt' => getRandomText($length),
             'content' => getRandomText(),
-            'published_at' => $created_at
+            'created_at' => $created_at,
+            'updated_at' => ''
         ]);
         DB::table('posts')->insert([
             'title'      => 'Laravel Tutorial Post',
@@ -45,7 +51,8 @@
             'category_id' => 2,
             'excerpt' => getRandomText($length),
             'content' => getRandomText(),
-            'published_at' => $created_at
+            'created_at' => $created_at,
+            'updated_at' => ''
         ]);
         DB::table('posts')->insert([
             'title'      => 'Laravel  Post',
@@ -54,7 +61,8 @@
             'category_id' => 2,
             'excerpt' => getRandomText($length),
             'content' => getRandomText(),
-            'published_at' => $created_at
+            'created_at' => $created_at,
+            'updated_at' => ''
         ]);
         DB::table('posts')->insert([
             'title'      => 'Laravel  Post High Level',
@@ -63,7 +71,8 @@
             'category_id' => 2,
             'excerpt' =>getRandomText($length),
             'content' =>getRandomText(),
-            'published_at' => $created_at
+            'created_at' => $created_at,
+            'updated_at' => ''
         ]);
 
     }
@@ -81,7 +90,7 @@
         );
         $text = $args[rand(0,3)];
         if($leng){
-            return substr($text , 0, $leng);
+            return substr($text , 0, $leng);;
         }
         return $text;
     }

@@ -7,10 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
+    use HasFactory;
 
-    protected $attributes = array(
-        'ZipCode' => '',
-    );
+//    protected $attributes = array(
+//        'ZipCode' => '',
+//    );
     //protected  $cats = array();
     public function __construct(array $attributes = [])
     {
@@ -32,5 +33,8 @@ class Post extends Model
 
     public function category(){
         return $this->belongsTo(Category::class);
+    }
+    public function author(){
+        return $this->belongsTo(USER::class);
     }
 }

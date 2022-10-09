@@ -41,4 +41,14 @@ php artisan make:model Category
 composer require itsgoingd/clockwork
 
 
+run this first:
+php artisan migrate:refresh
+
+then run:
 php artisan migrate:refresh --seed
+==> drop all table.
+
+Create make:factory
+php artisan make:factory Post
+php artisan make:factory Category
+php artisan make:factory Faker

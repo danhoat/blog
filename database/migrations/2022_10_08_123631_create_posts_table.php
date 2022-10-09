@@ -17,12 +17,12 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->foreignId('author_id');
-            $table->foreignId('category_id');
+            $table->foreignId('category_id')->nullable();
             $table->text('excerpt');
             $table->text('content');
             $table->string('slug')->unique();
-            $table->timestamps();
-            $table->timestamp('published_at')->nullable();
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
         });
     }
 
@@ -36,3 +36,4 @@ return new class extends Migration
         Schema::dropIfExists('posts');
     }
 };
+
