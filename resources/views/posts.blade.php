@@ -20,7 +20,7 @@
                 <span class="post-cat">Category:<a href="<?php echo url('/categories');?>/ {!!  $post->category->slug !!}"> {!!  $post->category->name !!} </a></span>
                 @endif
                 <span class="post-author">Author: {{ $post->author->name}}</span>
-                <span class="post-time">Date: {{ $post->published_at}}</span>
+                <span class="post-time">Date: {{ $post->created_at}}</span>
             </p>
         </article>
         @endforeach
