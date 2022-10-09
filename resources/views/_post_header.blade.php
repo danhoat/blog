@@ -44,8 +44,7 @@
 
                     <button @click = "show = ! show" class="py-2 pl-3 pr-9 text-sm rounded-xl"> Categories</button>
                     <div x-show="show" class=" py-2 absolute bg-gray-100   pl-3 pr-9 text-sm" style="display: none">
-
-
+                        
                         @if($categories->count() )
                             @foreach($categories as $category)
                                 <a href="/categories/{{$category->slug}}" class="block text-left px-3 text-sm leading-6"> {{ucwords($category->name)}}</a>
