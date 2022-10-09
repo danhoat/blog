@@ -1,32 +1,16 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Laravel Blog</title>
-    <!-- Fonts -->
-    <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="<?php echo asset('app.css');?>" />
-    <script src="app.js"></script>
-</head>
-<body class="antialiased">
-    <header>
-        <div class="header">
-            <ul class="menu">
-                <li> <a href="/"> Home </li></li>
-                <li> <a href="/">Posts</a></li>
-                <li> <a href="#" >About Us </a></li>
-                <li> <a href="/users" >List Users</a></li>
+@include('_post_header')
 
-            </ul>
+    <main class="max-w-6xl mx-auto mt-6 lg:mt-20 space-y-6">
+        <x-post-featured-card/>
+            <div class="lg:grid lg:grid-cols-2">
+                <x-post-card />
+                <x-post-card />
+            </div>
+        <div class="lg:grid lg:grid-cols-3">
+            <x-post-card />
+            <x-post-card />
+            <x-post-card />
         </div>
-    </header>
-    <div class="container">
-    @yield('content')
-    </div>
-    <footer>
-        <center> <h2>Laravel Blog Footer</h2> </center>
-    </footer>
-</body>
+    </main>
 
-</html>
+@include('_post_footer')
