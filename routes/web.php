@@ -22,10 +22,11 @@ Route::get('/', function () {
     Illuminate\Support\Facades\DB::listen(function ($query){
         logger($query->sql, $query->bindings);
     });
-    //$posts = Post::all();
+    $posts = Post::all();
+    //$posts = Post::latest()->with(['category','author'])->get();
 
-    return view('posts',[
-        'posts' => Post::latest()->with(['category','author'])->get()
+    return view('posts',[   
+        'posts' => $posts,
     ]);
 });
 

@@ -29,7 +29,7 @@ class PostFactory extends Factory
             'title' => $title,
             'slug' => str_slug($title),
             'excerpt' => $this->faker->sentence,
-            'content' => $this->faker->paragraph,
+            'content' => $this->faker->realText(1000),
 //            'author_id' => \App\Models\User::factory()->create()->id,
 //            'category_id' => \App\Models\category::factory()->create()->id,
             'author_id' => User::factory(),
