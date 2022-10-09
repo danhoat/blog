@@ -10,7 +10,7 @@
     <nav class="md:flex md:justify-between md:items-center">
         <div>
             <a href="/">
-                <img src="./images/logo.svg" alt="Laracasts Logo" width="165" height="16">
+                <img src="/images/logo.svg" alt="Laracasts Logo" width="165" height="16">
             </a>
         </div>
 
@@ -28,7 +28,7 @@
             Latest <span class="text-blue-500">Header Blade</span> News
         </h1>
 
-        <h2 class="inline-flex mt-2">By Lary Laracore <img src="./images/lary-head.svg"
+        <h2 class="inline-flex mt-2">By Lary Laracore <img src="/images/lary-head.svg"
                                                            alt="Head of Lary the mascot"></h2>
 
         <p class="text-sm mt-14">
