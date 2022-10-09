@@ -14,7 +14,7 @@
             <h2 class="title"><a href="<?php echo url('/');?>/posts/{{$post->slug}}">{{ $post->title}} - ID {{$post->id}} </a></h2>
             <p>
                 @if($post->author)
-                    By <span class="post-author">Author: <a href="/author/{{$post->author->id}}">{{ $post->author->name}}</a></span>
+                    By <span class="post-author">Author: <a href="/author/{{$post->author->username}}">{{ $post->author->name}}</a></span>
                 @endif
                 @if($post->category)
                   in <span class="post-cat"><a href="<?php echo url('/categories');?>/{!!  $post->category->slug !!}"> {!!  $post->category->name !!} </a></span>

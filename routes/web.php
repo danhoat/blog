@@ -55,8 +55,12 @@ Route::get('categories/{category:slug}', function (Category $category) {
         'is_cat'=> $category,
     ]);
 });
-Route::get('author/{author}', function (User $author) {
+Route::get('author/{author:username}', function (User $author) {
 
+    Illuminate\Support\Facades\DB::listen(function ($query){
+        //logger($query->sql, $query->bindings);
+    });
+    //dd($author);
     return view('posts',[
         'posts' => $author->posts
     ]);
