@@ -4,6 +4,8 @@
 <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
 
 <body style="font-family: Open Sans, sans-serif">
 <section class="px-6 py-8">
@@ -38,17 +40,21 @@
         <div class="space-y-2 lg:space-y-0 lg:space-x-4 mt-8">
             <!--  Category -->
             <div class="relative flex lg:inline-flex items-center bg-gray-100 rounded-xl">
-                <select class="flex-1 appearance-none bg-transparent py-2 pl-3 pr-9 text-sm font-semibold">
-                    <option value="category" disabled selected>Category
-                    </option>
+                <div x-data="{ show: false }" @click.away="show=false">
 
-                    @if($categories->count() )
-                        @foreach($categories as $category)
-                            <option value="personal">{{$category->name}}</option>
-                        @endforeach
-                    @endif
+                    <button @click = "show = ! show" class="py-2 pl-3 pr-9 text-sm rounded-xl"> Categories</button>
+                    <div x-show="show" class=" py-2 absolute bg-gray-100   pl-3 pr-9 text-sm" style="display: none">
 
-                </select>
+
+                        @if($categories->count() )
+                            @foreach($categories as $category)
+                                <a href="/categories/{{$category->slug}}" class="block text-left px-3 text-sm leading-6"> {{ucwords($category->name)}}</a>
+                            @endforeach
+                        @endif
+
+                    </div>
+
+                </div>
 
                 <svg class="transform -rotate-90 absolute pointer-events-none" style="right: 12px;" width="22"
                      height="22" viewBox="0 0 22 22">

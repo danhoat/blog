@@ -54,7 +54,8 @@ Route::get('categories/{category:slug}', function (Category $category) {
 
     return view('posts',[
         'posts' => $category->posts,
-        'is_cat'=> $category,
+        'currentCat' => $category,
+        'categories'=> Category::all(),
     ]);
 });
 Route::get('author/{author:username}', function (User $author) {
