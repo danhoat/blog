@@ -32,9 +32,12 @@ class Post extends Model
     public function scopeFilter($query, array $filters)
     {
 
-        $query->when($filters['search'] ?? false, fn($query) => $query
-            ->where('title', 'like', '%' . request('search') . '%')
-            ->orWhere('content', 'like', '%' . request('search') . '%'));
+        $query->when($filters['search'] ?? false, fn($query) =>
+        $query
+            ->where(fn($query)=>
+                $query->where('title', 'like', '%' . request('search') . '%')
+                ->orWhere('content', 'like', '%' . request('search') . '%')
+        ));
 
         $query->when($filters['category'] ?? false, fn($query, $category) => $query
             ->whereHas('category', fn($query) =>
