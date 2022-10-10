@@ -35,7 +35,7 @@ class RegisterController extends Controller
 
 
         $req->session()->put('user',$user);
-
+        auth()->login($user);
         return redirect('/')->with('success','You have logged successful.');
 
     }
@@ -48,11 +48,17 @@ class RegisterController extends Controller
                 'password'      => 'required|max:255|min:2',
             ]);
             $attributes['password'] = Hash::make($attributes['password']);
-            User::create($attributes);
-
+            $user = User::create($attributes);
+            auth()->login($user);
            // session()->flash('success', 'Your account has been created.');
             return redirect('/')->with('success','Your account has been created.');
 
+    }
+    public function logout(){
+        if( auth() )
+            auth()->logout();
+
+        return redirect('/');
     }
 
 }

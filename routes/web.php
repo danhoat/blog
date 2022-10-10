@@ -41,10 +41,13 @@ Route::get('author/{author:username}', function (User $author) {
     ]);
 });
 
-Route::get('register', [RegisterController::class,'create']);
-Route::post('register', [RegisterController::class,'store']);
-Route::get('login', [RegisterController::class,'login']);
-Route::post('login', [RegisterController::class,'loginProcess']);
+Route::get('register', [RegisterController::class,'create'])->middleware('guest');
+
+Route::post('register', [RegisterController::class,'store'])->middleware('guest');
+
+Route::get('login', [RegisterController::class,'login'])->middleware('guest');
+Route::get('logout', [RegisterController::class,'logout']);
+Route::post('login', [RegisterController::class,'loginProcess'])->middleware('guest');
 
 
 
