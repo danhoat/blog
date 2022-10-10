@@ -20,7 +20,7 @@ class PostController extends Controller
             DB::listen(function ($query){
                 logger($query->sql, $query->bindings);
             });
-            return view('posts',[
+            return view('posts.index',[
                 'posts' => $posts,
                 'categories' => Category::all()
             ]);
@@ -28,7 +28,7 @@ class PostController extends Controller
     }
     public function show(Post $post){
 
-            return view('post',[
+            return view('posts.detail',[
                 'post' => $post
             ]);
 

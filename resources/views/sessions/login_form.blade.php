@@ -4,7 +4,7 @@
         <main class="max-w-lg mx-auto mt-6  bg-gray-100 rounded-xl space-y-6 p-6">
             <div class="mb-6">
                 <h1 class="font-bold text-center text-xl"> Login </h1>
-                <form class="mt-10" method="POST" action="/login">
+                <form class="mt-10" method="POST" action="login">
                     @csrf
 
                     <div class="form-group mb-5">

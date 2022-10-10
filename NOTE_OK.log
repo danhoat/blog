@@ -58,3 +58,4 @@ php artisan make:model Comment -mf
 (create model + factory comment)
 
 php artisan make:controller PostController
+php artisan make:controller SessionController

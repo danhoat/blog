@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\SessionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +28,7 @@ Route::get('posts/{post:slug}', [PostController::class,'show'] );
 
 Route::get('categories/{category:slug}', function (Category $category) {
 
-    return view('posts',[
+    return view('posts.index',[
         'posts' => $category->posts()->paginate(3),
         'currentCat' => $category,
         'categories'=> Category::all(),
@@ -35,7 +36,7 @@ Route::get('categories/{category:slug}', function (Category $category) {
 })->name('category');
 Route::get('author/{author:username}', function (User $author) {
 
-    return view('posts',[
+    return view('posts.index',[
         'posts' => $author->posts()->paginate(5),
         'categories' => Category::all()
     ]);
@@ -45,10 +46,10 @@ Route::get('register', [RegisterController::class,'create'])->middleware('guest'
 
 Route::post('register', [RegisterController::class,'store'])->middleware('guest');
 
-Route::get('login', [RegisterController::class,'login'])->middleware('guest');
-Route::get('logout', [RegisterController::class,'logout']);
-Route::post('login', [RegisterController::class,'loginProcess'])->middleware('guest');
+Route::get('login', [SessionController::class,'loginForm'])->middleware('guest');
 
+Route::post('login', [SessionController::class,'create'])->middleware('guest');
+Route::get('logout', [SessionController::class,'logout'])->middleware('auth');
 
 
 //Route::get('users', function () {
