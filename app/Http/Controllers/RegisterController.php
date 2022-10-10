@@ -24,13 +24,9 @@ class RegisterController extends Controller
             $attributes['password'] = Hash::make($attributes['password']);
             User::create($attributes);
 
-//        $check = $this->validate($request, [
-//            'name'          => 'required|max:255',
-//                'username'      => 'required|max:255|min:3',
-//                'email'         => 'required|email|max:255|min:3',
-//                'password'      => 'required|max:255|min:2',
-//        ]);
-//        dd($check);
+            session()->flash('success', 'You account has been created.');
+
+
             return redirect('/');
 
 

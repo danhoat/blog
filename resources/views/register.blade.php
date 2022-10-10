@@ -19,16 +19,16 @@
 
                     <div class="form-group mb-5">
                         <label class="mb-2 block uppercase font-bold text-xs">Email </label>
-                        <input type="email" class="form-control w-full border p-2 m-height-30" value="youremail@gg.com" name="email" placeholder="email@example.com">
+                        <input type="email" class="form-control w-full border p-2 m-height-30"  name="email" placeholder="email@example.com">
                         @error('email')
-                        <p class="text-red-500 text=xs mt-1">{{$message}}</p>
+                        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                         @enderror
                     </div>
                     <div class="form-group mb-5">
                         <label class="mb-2 block uppercase font-bold text-xs text-gray-700">Username</label>
                         <input type="text" name="username" class="form-control w-full border p-2 m-height-30" placeholder="username">
                         @error('username')
-                        <p class="text-red-500 text=xs mt-1">{{$message}}</p>
+                        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                         @enderror
                     </div>
                     <div class="form-group mb-5">
@@ -39,7 +39,7 @@
                         <label for="exampleFormControlInput1">Password </label>
                         <input type="password" name="password" class="form-control w-full border border-gray-400 p-2 m-height-30" placeholder="password">
                         @error('password')
-                        <p class="text-red-500 text=xs mt-1">{{$message}}</p>
+                        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                         @enderror
                     </div>
 
