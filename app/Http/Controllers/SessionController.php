@@ -5,6 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+//use Nette\Schema\ValidationException;
+use Illuminate\Validation\ValidationException;
+
+
+
+
 
 
 class SessionController extends Controller
@@ -52,6 +58,8 @@ class SessionController extends Controller
         ){
             return redirect('/')->with('success', 'You have logged success');
         }
-        return back()->withErrors(["password" => "Password incorrect."])->withInput();
+        //return back()->withErrors(["password" => "Password incorrect."])->withInput();
+        throw ValidationException::withMessages(['password' => 'Login fail. Credential are not correct.']);
+
     }
 }
