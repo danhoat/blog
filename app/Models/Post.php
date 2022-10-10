@@ -29,7 +29,17 @@ class Post extends Model
         return  $this->cat_name;
 
     }
+    public function scopeFilter($query, array $filters){
 
+        $query->when( $filters['search'] ?? false, function($query){
+            $query
+                ->where('title','like','%'.request('search').'%' )
+                ->orWhere('content','like','%'.request('search').'%' );
+
+        });
+        logger('is search');
+        return $query;
+    }
     public function category(){
         return $this->belongsTo(Category::class);
     }

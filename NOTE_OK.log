@@ -56,3 +56,5 @@ php artisan make:factory Faker
 ***
 php artisan make:model Comment -mf
 (create model + factory comment)
+
+php artisan make:controller PostController

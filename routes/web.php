@@ -4,6 +4,7 @@ use App\Models\Category;
 use App\Models\User;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,35 +18,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', function () {
+Route::get('/', [PostController::class,'index'])->name('home');
 
-
-    //$posts = Post::all();
-    //$posts = Post::latest()->with(['category','author'])->get();
-
-    $posts = Post::latest();
-
-    if(request('search')){
-        logger('is search');
-        $posts->where('title','like','%'.request('search').'%' );
-        $posts->orWhere('content','like','%'.request('search').'%' );
-    }
-
-    Illuminate\Support\Facades\DB::listen(function ($query){
-        logger($query->sql, $query->bindings);
-    });
-    return view('posts',[
-        'posts' => $posts->get(),
-        'categories' => Category::all()
-    ]);
-})->name('home');
-
-Route::get('posts/{post:slug}', function (Post $post) {
-
-    return view('post',[
-        'post' => $post
-    ]);
-});
+Route::get('posts/{post:slug}', [PostController::class,'show'] );
 
 Route::get('users', function () {
     $users = User::list();
@@ -55,7 +30,6 @@ Route::get('users', function () {
 });
 
 Route::get('categories/{category:slug}', function (Category $category) {
-
 
     return view('posts',[
         'posts' => $category->posts,
