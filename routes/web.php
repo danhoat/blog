@@ -46,12 +46,12 @@ Route::post('register', [RegisterController::class,'store']);
 
 
 
-Route::get('users', function () {
-    $users = User::list();
-    return view('users',[
-        'users' => $users,
-    ]);
-});
+//Route::get('users', function () {
+//    $users = User::list()->paginate('10');
+//    return view('users',[
+//        'users' => $users,
+//    ]);
+//});
 
 Route::get("users",[UserController::class,'list']);
 
