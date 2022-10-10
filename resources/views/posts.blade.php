@@ -7,9 +7,9 @@
             @if( $posts->count() )
                 @if(request('search') || request('category'))
                     <p> Search Results: {{$posts->count()}} posts found.</p>
-                @else
-                <x-post-featured-card :post="$posts[0]" />
                 @endif
+                <x-post-featured-card :post="$posts[0]" />
+
             <div class="lg:grid lg:grid-cols-2">
                 @foreach($posts->skip(1) as $post)
                     <x-post-card :post="$post" />
