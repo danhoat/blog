@@ -33,7 +33,6 @@ class RegisterController extends Controller
             return back()->withErrors(["password" => "Password incorrect."])->withInput();
         }
 
-
         $req->session()->put('user',$user);
         auth()->login($user);
         return redirect('/')->with('success','You have logged successful.');
@@ -52,7 +51,6 @@ class RegisterController extends Controller
             auth()->login($user);
            // session()->flash('success', 'Your account has been created.');
             return redirect('/')->with('success','Your account has been created.');
-
     }
     public function logout(){
         if( auth() )
