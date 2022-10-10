@@ -24,10 +24,10 @@ class RegisterController extends Controller
             $attributes['password'] = Hash::make($attributes['password']);
             User::create($attributes);
 
-            session()->flash('success', 'You account has been created.');
+           // session()->flash('success', 'Your account has been created.');
 
 
-            return redirect('/');
+            return redirect('/')->with('success','Your account has been created.');
 
 
     }
