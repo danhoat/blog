@@ -19,7 +19,7 @@
 
                     <div class="form-group mb-5">
                         <label class="mb-2 block uppercase font-bold text-xs">Email </label>
-                        <input type="email" class="form-control w-full border p-2 m-height-30" value="acb@gg.com" name="email" placeholder="email@example.com">
+                        <input type="email" class="form-control w-full border p-2 m-height-30" value="youremail@gg.com" name="email" placeholder="email@example.com">
                     </div>
                     <div class="form-group mb-5">
                         <label class="mb-2 block uppercase font-bold text-xs text-gray-700">Username</label>
