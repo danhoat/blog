@@ -12,13 +12,11 @@ class UserController extends Controller
     function login(Request $req){
         $email  = $req->email;
         $user   = false;
-
         if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $user =  User::where(['email'=> $email])->first();
         } else {
             $user = User::where(['name'=> $email])->first();
         }
-
 
         if( !$user || !Hash::check($req->password, $user->password )){
             return 'Password incorrect.';
@@ -31,7 +29,7 @@ class UserController extends Controller
     static function list(){
         $numberItemPerpage = 6;
         $users = User::paginate($numberItemPerpage);
-       
+
         return view('users',['users' => $users]);
 
     }

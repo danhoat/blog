@@ -19,6 +19,7 @@
         <div class="mt-8 md:mt-0">
             <a href="/" class="text-xs font-bold uppercase"> &nbsp;Home Page &nbsp;</a>
             <a href="/users" class="text-xs font-bold uppercase">&nbsp; Users &nbsp;</a>
+            <a href="/login" class="text-xs font-bold uppercase">&nbsp; Login &nbsp;</a>
             <a href="/register" class="text-xs font-bold uppercase">&nbsp; Register &nbsp;</a>
 
             <a href="#" class="bg-blue-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">
