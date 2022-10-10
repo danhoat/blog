@@ -4,12 +4,9 @@
     </div>
     <div>
         <header class="mb-4">
-            <h3 class="font-bold"> John Doe</h3>
-            <p class="text-xs"> Posted <time> 8 months ago</time></p>
+            <h3 class="font-bold"> {{ $comment->author->name }}</h3>
+            <p class="text-xs"> Posted <time> {{ $comment->created_at->diffForHumans() }}<time></p>
         </header>
-        <p>
-            Next time you have changed a file and want to restore it to the state it is in the index, don't delete the file first, just do
-
-        </p>
+        <p> {{$comment->content }}</p>
     </div>
 </article>

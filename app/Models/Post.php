@@ -20,7 +20,7 @@ class Post extends Model
 
     }
 
-    protected $appends = ['category','author','cate_name','post_date'];
+    protected $appends = ['category','author','cate_name','post_date','comments'];
 
     public function getCateNameAttribute(){
 
@@ -50,6 +50,9 @@ class Post extends Model
         );
         return $query;
 
+    }
+    public  function comments(){
+        return $this->hasMany(Comment::class,'post_id');
     }
     public function category(){
         return $this->belongsTo(Category::class);

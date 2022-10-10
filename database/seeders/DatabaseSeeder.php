@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Comment;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -32,7 +33,7 @@ class DatabaseSeeder extends Seeder
             'author_id' => $user->id
             ]
         );
-
+        Comment::factory(10)->create();
 
        // $name = DB::table('category')->where('name', 'John')->pluck('name');
 

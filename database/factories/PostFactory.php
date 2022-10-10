@@ -24,7 +24,7 @@ class PostFactory extends Factory
     {
         // $title = $this->faker->name;
         // 'excerpt' => $this->faker->realText(250),
-        $title = $this->faker->sentence;
+        $title = $this->faker->unique()->sentence;
         return [
             'title' => $title,
             'slug' => str_slug($title),

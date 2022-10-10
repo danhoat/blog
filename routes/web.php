@@ -38,7 +38,8 @@ Route::get('author/{author:username}', function (User $author) {
 
     return view('posts.index',[
         'posts' => $author->posts()->paginate(5),
-        'categories' => Category::all()
+        'categories' => Category::all(),
+
     ]);
 });
 

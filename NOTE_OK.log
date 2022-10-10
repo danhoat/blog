@@ -64,3 +64,4 @@ Laravel Breeze.
 => packge intergrated login/logout/forgotpassword/register ...
 
 https://laracasts.com/series/laravel-8-from-scratch/episodes/52 => comment html only
+php artisan make:model Comment -mfc

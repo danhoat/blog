@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Category;
+use App\Models\Comment;
 
 class PostController extends Controller
 {
@@ -27,9 +28,8 @@ class PostController extends Controller
 
     }
     public function show(Post $post){
-
             return view('posts.detail',[
-                'post' => $post
+                'post' => $post,
             ]);
 
     }
