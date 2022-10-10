@@ -5,7 +5,7 @@
 
 
             @if( $posts->count() )
-                @if(request('search'))
+                @if(request('search') || request('category'))
                     <p> Search Results: {{$posts->count()}} posts found.</p>
                 @else
                 <x-post-featured-card :post="$posts[0]" />
