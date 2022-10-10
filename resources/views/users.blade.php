@@ -6,24 +6,26 @@
         </div>
         <div class="content">
 
-
+        <ddiv class="overflow-x-auto relative shadow-md sm:rounded-lg">
             @if(count($users) > 0)
-                <table class="table-auto">
-                    <thead>
+
+                <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
-                            <th>ID</th>
-                            <th>Username</th>
-                            <th>Display Name</th>
-                            <th>Email</th>
+                            <th scope="col" class="py-3 px-6">ID</th>
+                            <th scope="col" class="py-3 px-6">Username</th>
+                            <th scope="col" class="py-3 px-6">Display Name</th>
+                            <th scope="col" class="py-3 px-6">Email</th>
                         </tr>
                     </thead>
 
                     @foreach($users as $user)
-                        <tr class="{{ $loop->even ? 'foobar': 'noEvent'}}">
-                            <td>{{$user->id}}</td>
-                            <td>{{$user->username}}</td>
-                            <td>{{$user->name}}</td>
-                            <td>{{$user->email}}</td>
+                    <tr class=" border-b dark:bg-gray-800 dark:border-gray-700 {{ $loop->even ? 'bg-white': 'bg-gray-50'}} ">
+
+                            <td  class="py-3 px-6">{{$user->id}}</td>
+                            <td  class="py-3 px-6">{{$user->username}}</td>
+                            <td class="py-3 px-6"> {{$user->name}}</td>
+                            <td class="py-3 px-6">{{$user->email}}</td>
                         </tr>
                     @endforeach
                 </table>
@@ -40,6 +42,7 @@
             @else
                 <h3> No user found.</h3>
             @endif
+        </div>
         </div>
         </main>
     @endsection

@@ -12,6 +12,8 @@ class RegisterController extends Controller
 {
     //
     public function create(){
+        if( auth()->user() )
+            redirect('/');
         return view('register.form');
     }
 
