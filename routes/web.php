@@ -22,12 +22,7 @@ Route::get('/', [PostController::class,'index'])->name('home');
 
 Route::get('posts/{post:slug}', [PostController::class,'show'] );
 
-Route::get('users', function () {
-    $users = User::list();
-    return view('users',[
-        'users' => $users,
-    ]);
-});
+
 
 Route::get('categories/{category:slug}', function (Category $category) {
 
@@ -39,10 +34,7 @@ Route::get('categories/{category:slug}', function (Category $category) {
 })->name('category');
 Route::get('author/{author:username}', function (User $author) {
 
-    Illuminate\Support\Facades\DB::listen(function ($query){
-        //logger($query->sql, $query->bindings);
-    });
-    //dd($author);
+
     return view('posts',[
         'posts' => $author->posts
     ]);
@@ -50,4 +42,17 @@ Route::get('author/{author:username}', function (User $author) {
 
 
 
+Route::get('users', function () {
+    $users = User::list();
+    return view('users',[
+        'users' => $users,
+    ]);
+});
+
 Route::get("users",[UserController::class,'list']);
+
+
+//Illuminate\Support\Facades\DB::listen(function ($query){
+//    //logger($query->sql, $query->bindings);
+//});
+//dd($author);
