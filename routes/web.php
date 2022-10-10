@@ -19,21 +19,27 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
 
+
+    //$posts = Post::all();
+    //$posts = Post::latest()->with(['category','author'])->get();
+
+    $posts = Post::latest();
+
+    if(request('search')){
+        logger('is search');
+        $posts->where('title','like','%'.request('search').'%' );
+    }
+
     Illuminate\Support\Facades\DB::listen(function ($query){
         logger($query->sql, $query->bindings);
     });
-    $posts = Post::all();
-    //$posts = Post::latest()->with(['category','author'])->get();
-
     return view('posts',[
-        'posts' => $posts,
+        'posts' => $posts->get(),
         'categories' => Category::all()
     ]);
-});
+})->name('home');
 
 Route::get('posts/{post:slug}', function (Post $post) {
-
-   // $post = DB::table('posts')->where('slug', $slug)->first();
 
     return view('post',[
         'post' => $post
@@ -42,8 +48,6 @@ Route::get('posts/{post:slug}', function (Post $post) {
 
 Route::get('users', function () {
     $users = User::list();
-
-
     return view('users',[
         'users' => $users,
     ]);
@@ -57,7 +61,7 @@ Route::get('categories/{category:slug}', function (Category $category) {
         'currentCat' => $category,
         'categories'=> Category::all(),
     ]);
-});
+})->name('category');
 Route::get('author/{author:username}', function (User $author) {
 
     Illuminate\Support\Facades\DB::listen(function ($query){
