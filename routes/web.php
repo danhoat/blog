@@ -28,6 +28,7 @@ Route::get('/', function () {
     if(request('search')){
         logger('is search');
         $posts->where('title','like','%'.request('search').'%' );
+        $posts->orWhere('content','like','%'.request('search').'%' );
     }
 
     Illuminate\Support\Facades\DB::listen(function ($query){
