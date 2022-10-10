@@ -14,6 +14,7 @@
                 @foreach($posts->skip(1) as $post)
                     <x-post-card :post="$post" />
                 @endforeach
+                {{ $posts->links() }}
             </div>
             @else
             No post found

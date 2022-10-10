@@ -27,7 +27,7 @@ Route::get('posts/{post:slug}', [PostController::class,'show'] );
 Route::get('categories/{category:slug}', function (Category $category) {
 
     return view('posts',[
-        'posts' => $category->posts,
+        'posts' => $category->posts()->paginate(3),
         'currentCat' => $category,
         'categories'=> Category::all(),
     ]);
