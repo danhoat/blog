@@ -59,3 +59,8 @@ php artisan make:model Comment -mf
 
 php artisan make:controller PostController
 php artisan make:controller SessionController
+
+Laravel Breeze.
+=> packge intergrated login/logout/forgotpassword/register ...
+
+https://laracasts.com/series/laravel-8-from-scratch/episodes/52 => comment html only

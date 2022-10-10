@@ -66,4 +66,4 @@ Route::get("users",[UserController::class,'list']);
 //    //logger($query->sql, $query->bindings);
 //});
 //dd($author);
- 
+

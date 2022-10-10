@@ -7,7 +7,7 @@
                 <img src="/images/illustration-1.png" alt="" class="rounded-xl">
 
                 <p class="mt-4 block text-gray-400 text-xs">
-                    Published <time>1 day ago</time>
+                    Published <time>{{ $post->created_at->diffForHumans() }}</time>
                 </p>
 
                 <div class="flex items-center lg:justify-center text-sm mt-4">
@@ -47,11 +47,14 @@
                   {{$post->title}}
                 </h1>
 
-                <div class="space-y-4 lg:text-lg leading-loose">
-                    {{$post->content}}
-
-                </div>
+                <div class="space-y-4 lg:text-lg leading-loose">{{$post->content}}</div>
             </div>
+            <section  class="col-span-8 col-start-5 mt-10 space-y-6">
+
+                <x-comment></x-comment>
+                <x-comment></x-comment>
+                <x-comment></x-comment>
+            </section>
         </article>
     </main>
     @endsection
