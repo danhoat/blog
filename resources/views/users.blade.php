@@ -8,13 +8,15 @@
 
 
             @if(count($users) > 0)
-                <table>
-                    <tr>
-                        <th>ID</th>
-                        <th>Username</th>
-                        <th>Display Name</th>
-                        <th>Email</th>
-                    </tr>
+                <table class="table-auto">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Username</th>
+                            <th>Display Name</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
 
                     @foreach($users as $user)
                         <tr class="{{ $loop->even ? 'foobar': 'noEvent'}}">
