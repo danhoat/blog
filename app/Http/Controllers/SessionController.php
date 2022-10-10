@@ -56,7 +56,7 @@ class SessionController extends Controller
             Auth()->attempt(['email' => $email, 'password' => $password]) ||
             Auth()->attempt(['username' => $email, 'password' => $password] )
         ){
-            return redirect('/')->with('success', 'You have logged success');
+            return redirect('/')->with('success', 'Welcome Back.');
         }
         //return back()->withErrors(["password" => "Password incorrect."])->withInput();
         throw ValidationException::withMessages(['password' => 'Login fail. Credential are not correct.']);
