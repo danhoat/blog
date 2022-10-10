@@ -37,7 +37,13 @@ class Post extends Model
             ->orWhere('content', 'like', '%' . request('search') . '%'));
 
         $query->when($filters['category'] ?? false, fn($query, $category) => $query
-            ->whereHas('category', fn($query) => $query->where('slug', $category))
+            ->whereHas('category', fn($query) =>
+                $query->where('slug', $category))
+        );
+
+        $query->when($filters['author'] ?? false, fn($query, $category) => $query
+            ->whereHas('author', fn($query) =>
+                $query->where('username', $category))
         );
         return $query;
 
@@ -47,7 +53,7 @@ class Post extends Model
     }
     public function author(){
         //return $this->belongsTo(USER::class,'author_id');
-        return $this->belongsTo(USER::class);
+        return $this->belongsTo(USER::class,'author_id');
     }
 
 

@@ -47,7 +47,8 @@ class User extends Authenticatable
         parent::__construct($attributes);
     }
     public  function posts(){
-        return $this->hasMany(Post::class,'author_id');
+        $posts =  $this->hasMany(Post::class,'author_id');
+        return $posts;
 
     }
     public function getSlugAttribute(){
