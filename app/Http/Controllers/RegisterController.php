@@ -27,7 +27,7 @@ class RegisterController extends Controller
             $user = User::where(['name'=> $email])->first();
         }
         if( ! $user){
-            return back()->withErrors(["email" => "Email no exists"])->withInput();
+            return back()->withErrors(["email" => "Email/Username no exists"])->withInput();
         }
         if( !$user || !Hash::check($req->password, $user->password )){
             return back()->withErrors(["password" => "Password incorrect."])->withInput();

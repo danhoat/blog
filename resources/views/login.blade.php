@@ -8,8 +8,8 @@
                     @csrf
 
                     <div class="form-group mb-5">
-                        <label class="mb-2 block uppercase font-bold text-xs">Email </label>
-                        <input type="text" class="form-control w-full border p-2 m-height-30"  name="email" placeholder="email@example.com">
+                        <label class="mb-2 block uppercase font-bold text-xs">Email/Username </label>
+                        <input type="text" class="form-control w-full border p-2 m-height-30"  name="email" placeholder="Email/Username">
                         @error('email')
                         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                         @enderror
