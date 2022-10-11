@@ -19,31 +19,31 @@
 
                     <div class="form-group mb-5">
                         <label class="mb-2 block uppercase font-bold text-xs">Email </label>
-                        <input type="email" class="form-control w-full border p-2 m-height-30"  name="email" placeholder="email@example.com">
+                        <input type="email" class="rounded w-full border border-gray-300 p-2 m-height-30"  name="email" placeholder="email@example.com">
                         @error('email')
                         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                         @enderror
                     </div>
                     <div class="form-group mb-5">
                         <label class="mb-2 block uppercase font-bold text-xs text-gray-700">Username</label>
-                        <input type="text" name="username" class="form-control w-full border p-2 m-height-30" placeholder="username">
+                        <input type="text" name="username" class="rounded w-full border border-gray-300 p-2 m-height-30" placeholder="username">
                         @error('username')
                         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                         @enderror
                     </div>
                     <div class="form-group mb-5">
                         <label class="mb-2 block uppercase font-bold text-xs text-gray-700">Display Name</label>
-                        <input type="text" name="name" class="form-control w-full border p-2 m-height-30" placeholder="Display Name">
+                        <input type="text" name="name" class="rounded w-full border border-gray-300 p-2 m-height-30" placeholder="Display Name">
                     </div>
                     <div class="form-group mb-5">
                         <label for="exampleFormControlInput1">Password </label>
-                        <input type="password" name="password" class="form-control w-full border border-gray-400 p-2 m-height-30" placeholder="password">
+                        <input type="password" name="password" class="rounded w-full border border-gray-300 p-2 m-height-30" placeholder="password">
                         @error('password')
                         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                         @enderror
                     </div>
 
-                    <button type="submit" class=" text-right  btn button bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500" > Register</button>
+                    <button type="submit" class=" text-right  btn button bg-blue-300 text-white rounded py-2 px-4 hover:bg-blue-500" > Register</button>
                 </form>
             </div>
         </main>
