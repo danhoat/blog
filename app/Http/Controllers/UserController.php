@@ -28,6 +28,5 @@ class UserController extends Controller
     }
     static function list(){
         return view('users',['users' => User::paginate(10)]);
-
     }
 }

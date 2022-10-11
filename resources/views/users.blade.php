@@ -16,16 +16,19 @@
                             <th scope="col" class="py-3 px-6">Username</th>
                             <th scope="col" class="py-3 px-6">Display Name</th>
                             <th scope="col" class="py-3 px-6">Email</th>
+                            <th scope="col" class="py-3 px-6">Created</th>
                         </tr>
                     </thead>
 
                     @foreach($users as $user)
-                    <tr class=" border-b dark:bg-gray-800 dark:border-gray-700 {{ $loop->even ? 'bg-white': 'bg-gray-50'}} ">
+                    <tr class=" border-b dark:bg-gray-800 dark:border-gray-700 {{ $loop->even ? 'bg-gray-50':  'bg-white'}} ">
 
                             <td  class="py-3 px-6">{{$user->id}}</td>
                             <td  class="py-3 px-6">{{$user->username}}</td>
                             <td class="py-3 px-6"> {{$user->name}}</td>
                             <td class="py-3 px-6">{{$user->email}}</td>
+                            <td class="py-3 px-6">{{$user->created_at}}</td>
+
                         </tr>
                     @endforeach
                 </table>
