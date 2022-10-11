@@ -65,3 +65,10 @@ Laravel Breeze.
 
 https://laracasts.com/series/laravel-8-from-scratch/episodes/52 => comment html only
 php artisan make:model Comment -mfc
+
+
+
+php artisan migrate --path=database/migrations/2022_10_11_063049_drop_comments_table.php
+php artisan migrate:refresh --path=database/migrations/2022_10_10_171503_create_comments_table.php
+
+php artisan make:migration drop_comments_table
