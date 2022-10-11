@@ -9,7 +9,7 @@
 
                     <div class="form-group mb-5">
                         <label class="mb-2 block uppercase font-bold text-xs">Email/Username </label>
-                        <input type="text" class="rounded w-full border border-gray-300 p-2 m-height-30 rounded"  name="email" placeholder="Email/Username">
+                        <input type="text" class="rounded w-full border border-gray-300 p-2 m-height-30 rounded"  name="email" placeholder="Email/Username" value="{{ old('email')}}">
                         @error('email')
                         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                         @enderror
@@ -17,13 +17,13 @@
 
                     <div class="form-group mb-5">
                         <label class="mb-2 block uppercase font-bold text-xs">Password </label>
-                        <input type="password" name="password" class="rounded w-full border  border-gray-300 p-2 m-height-30" placeholder="password">
+                        <input type="password" name="password" class="rounded w-full border  border-gray-300 p-2 m-height-30" placeholder="Password">
                         @error('password')
                         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                         @enderror
                     </div>
                     <div class="text-right">
-                        <button type="submit" class=" text-center md:max-w-xs md:w-28 btn button bg-blue-400 text-white rounded py-2 px-8 hover:bg-blue-500 sm:w-full" > Register </button>
+                        <button type="submit" class=" text-center md:max-w-xs md:w-28 btn button bg-blue-400 text-white rounded py-2 px-8 hover:bg-blue-500 sm:w-full" >Login</button>
                     </div>
                 </form>
             </div>
