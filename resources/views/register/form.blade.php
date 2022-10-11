@@ -37,13 +37,17 @@
                     </div>
                     <div class="form-group mb-5">
                         <label for="exampleFormControlInput1">Password </label>
-                        <input type="password" name="password" class="rounded w-full border border-gray-300 p-2 m-height-30" placeholder="password">
+                        <input type="password" name="password" class="rounded w-full border border-gray-300 p-2 m-height-30" placeholder="Password">
                         @error('password')
                         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                         @enderror
                     </div>
 
-                    <button type="submit" class=" text-right  btn button bg-blue-300 text-white rounded py-2 px-4 hover:bg-blue-500" > Register</button>
+
+                    <div class="text-right">
+                        <button type="submit" class=" text-right  btn button bg-blue-400 text-white rounded py-2 px-8 hover:bg-blue-500" > Register </button>
+                    </div>
+
                 </form>
             </div>
         </main>

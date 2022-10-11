@@ -22,8 +22,9 @@
                         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                         @enderror
                     </div>
-
-                    <button type="submit" class=" text-right  btn button bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500" > Login</button>
+                    <div class="text-right">
+                        <button type="submit" class=" text-right  btn button bg-blue-400 text-white rounded py-2 px-8 hover:bg-blue-500" > Login</button>
+                    </div>
                 </form>
             </div>
         </main>
