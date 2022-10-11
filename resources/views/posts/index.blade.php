@@ -4,9 +4,9 @@
         <main class="max-w-6xl mx-auto mt-6 lg:mt-20 space-y-6">
 
 
-            @if( $posts->count() )
+            @if( $posts->total() )
                 @if(request('search') || request('category'))
-                    <p> Search Results: {{$posts->count()}} posts found.</p>
+                    <p> Search Results: {{$posts->total()}} posts found.</p>
                 @endif
                 <x-post-featured-card :post="$posts[0]" />
 
