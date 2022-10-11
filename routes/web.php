@@ -2,12 +2,13 @@
 use App\Models\Post;
 use App\Models\Category;
 use App\Models\User;
+use App\Models\Comment;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionController;
-
+use App\Http\Controllers\CommentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -52,13 +53,8 @@ Route::get('login', [SessionController::class,'loginForm'])->middleware('guest')
 Route::post('login', [SessionController::class,'create'])->middleware('guest');
 Route::get('logout', [SessionController::class,'logout'])->middleware('auth');
 
+Route::post('savecomment', [CommentController::class,'store']);
 
-//Route::get('users', function () {
-//    $users = User::list()->paginate('10');
-//    return view('users',[
-//        'users' => $users,
-//    ]);
-//});
 
 Route::get("users",[UserController::class,'list']);
 

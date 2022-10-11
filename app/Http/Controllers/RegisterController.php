@@ -17,7 +17,6 @@ class RegisterController extends Controller
         return view('register.form');
     }
 
-
     public function store(Request $request){
 
             $attributes = $request->validate([

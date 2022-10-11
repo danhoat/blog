@@ -72,3 +72,10 @@ php artisan migrate --path=database/migrations/2022_10_11_063049_drop_comments_t
 php artisan migrate:refresh --path=database/migrations/2022_10_10_171503_create_comments_table.php
 
 php artisan make:migration drop_comments_table
+
+Ajax:
+
+use App\Http\Controllers\AjaxController;
+
+Route::get('add-post', [AjaxController::class, 'myPost']);
+Route::post('submit-post', [AjaxController::class, 'submitPost'])->name('postSubmit');
