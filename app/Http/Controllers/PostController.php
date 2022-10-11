@@ -16,7 +16,8 @@ class PostController extends Controller
             //$posts = Post::latest()->with(['category','author'])->get();
 
             $posts = Post::latest()->filter( request(['search','category','author']) )
-                ->paginate(3);
+                ->paginate(3)->withQueryString();
+          //  $posts->appends(Request::all())->links();
 
             DB::listen(function ($query){
                 logger($query->sql, $query->bindings);
