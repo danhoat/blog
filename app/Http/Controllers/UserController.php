@@ -27,10 +27,7 @@ class UserController extends Controller
 
     }
     static function list(){
-        $numberItemPerpage = 10;
-        $users = User::paginate($numberItemPerpage);
-
-        return view('users',['users' => $users]);
+        return view('users',['users' => User::paginate(10)]);
 
     }
 }
