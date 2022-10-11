@@ -18,7 +18,7 @@ class CommentController extends Controller
         $attribues = $request->validate([
             'post_id' => 'required|max:255',
             'user_id' => 'required',
-            'content' => 'required|max:255',
+            'content' => 'required',
         ]);
 //        $args = array(
 //            'post_id' => $request->post_id,
