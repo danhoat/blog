@@ -1,3 +1,5 @@
+tailwind.min.css
+
 php artisan migrate:refresh
 ==> remove all table was created.
 

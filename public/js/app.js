@@ -21,6 +21,9 @@
                 type: 'POST',
                 dataType: "json",
                 data: formData,
+                beforeSend: function( xhr ) {
+                    $("<button>").addClass("animate-spin");
+                },
                 success: function(data) {
                     // log response into console
                     console.log(data);
