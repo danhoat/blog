@@ -41,8 +41,8 @@
 
             <footer class="flex justify-between items-center mt-8">
                 <div class="flex items-center text-sm">
-                    <img src="/images/lary-avatar.svg" alt="Lary avatar">
                     @if( $post->author )
+                        <img src="https://i.pravatar.cc/60" width="60" height="60" class="rounded-xl" alt="{!! $post->author->username !!}" />
                         <div class="ml-3">
                             <h5 class="font-bold"><a href="/author/{!! $post->author->username !!}">{!!  $post->author->name !!}</a></h5>
                             <h6>Mascot at Laracasts</h6>
