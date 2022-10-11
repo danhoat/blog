@@ -5,10 +5,10 @@
             <h1> List Users</h1>
         </div>
         <div class="content">
-
-        <ddiv class="overflow-x-auto relative shadow-md sm:rounded-lg">
-            @if(count($users) > 0)
-
+`       @if(count($users) > 0)
+                <p class=""> Total: {{$users->total() }} users.</p>
+            <p>&nbsp;</p>
+        <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
@@ -31,21 +31,21 @@
 
                         </tr>
                     @endforeach
-                </table>
-                <div class="container mt-5">
-                    {{$users->links()}}
-{{--                    <div class="d-flex justify-content-center pagination">--}}
-{{--                        <!-- {!! $users->links() !!} -->--}}
-{{--                        <nav aria-label="Page navigation example" class="pagination">--}}
-{{--                            {{ $users->render("pagination::default") }}--}}
-{{--                        </nav>--}}
-{{--                    </div>--}}
-                </div>
 
+                </table>
             @else
                 <h3> No user found.</h3>
             @endif
         </div>
+            <div class="container mt-5">
+                {{$users->links()}}
+                {{--                    <div class="d-flex justify-content-center pagination">--}}
+                {{--                        <!-- {!! $users->links() !!} -->--}}
+                {{--                        <nav aria-label="Page navigation example" class="pagination">--}}
+                {{--                            {{ $users->render("pagination::default") }}--}}
+                {{--                        </nav>--}}
+                {{--                    </div>--}}
+            </div>
         </div>
         </main>
     @endsection

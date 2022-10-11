@@ -8,8 +8,8 @@
                     @csrf
 
                     <div class="form-group mb-5">
-                        <label class="mb-2 block uppercase font-bold text-xs">Email/Username </label>
-                        <input type="text" class="rounded w-full border border-gray-300 p-2 m-height-30 rounded"  name="email" placeholder="Email/Username" value="{{ old('email')}}">
+                        <label class="mb-2 block uppercase font-bold text-xs">Username or Email Address</label>
+                        <input type="text" class="rounded w-full border border-gray-300 p-2 m-height-30 rounded"  name="email"  value="{{ old('email')}}">
                         @error('email')
                         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                         @enderror
@@ -17,7 +17,7 @@
 
                     <div class="form-group mb-5">
                         <label class="mb-2 block uppercase font-bold text-xs">Password </label>
-                        <input type="password" name="password" class="rounded w-full border  border-gray-300 p-2 m-height-30" placeholder="Password">
+                        <input type="password" name="password" class="rounded w-full border  border-gray-300 p-2 m-height-30">
                         @error('password')
                         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                         @enderror
