@@ -8,7 +8,6 @@
                 <p class="mt-4 block text-gray-400 text-xs">
                     Published <time>{{ $post->created_at->diffForHumans() }}</time>
                 </p>
-
                 <div class="flex items-center lg:justify-center text-sm mt-4">
                     <img src="https://i.pravatar.cc/60?img={{ auth()->user()->id }}" width="60" height="40" />
                     <div class="ml-3 text-left">
