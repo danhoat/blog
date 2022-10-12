@@ -27,6 +27,6 @@ class UserController extends Controller
 
     }
     static function list(){
-        return view('users',['users' => User::paginate(10)]);
+        return view('users',['users' => User::orderByDesc('created_at')->paginate(10)]);
     }
 }
