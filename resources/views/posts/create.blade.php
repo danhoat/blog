@@ -63,7 +63,7 @@
                         @endphp
                         <select name="category_id" " required class="inline-block appearance-none w-full bg-white border border-gray-200 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
                             @if($categories)
-                                <option>Select Category</option>
+                                <option value="">Select Category</option>
                                 @foreach($categories as $cat)
                                     <option value="{{$cat->id}}">{{$cat->name}}</option>
                                 @endforeach
