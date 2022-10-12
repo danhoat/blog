@@ -55,12 +55,13 @@ class PostController extends Controller
             'category_id'   => ['required',Rule::exists('categories','id')],
             'content'      => 'required',
         ]);
-
+        $slug =  str_slug($request->title);
         $attributes['author_id']    = auth()->user()->id;
-        $attributes['slug']         = str_slug($request->title).now();
-
-        //$image_path = $request->file('thumbnail')->store('public/thumbnails');
-
+        if (Post::where('slug', $slug)->exists()) {
+            $slug = $slug.'-'.now();
+        }
+        $attributes['slug']         = $$slug
+            
         $base_path = 'public/thumbnails';
 
         $img_path = $request->file('thumbnail')->store($base_path); // $base_path. image(name.mimeextension).
