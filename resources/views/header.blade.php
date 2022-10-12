@@ -12,6 +12,7 @@
 
 <body style="font-family: Open Sans, sans-serif">
 <section class="px-6 py-8">
+    {{public_path('images')}}
     <nav class="md:flex md:justify-between md:items-center">
         <div>
             <a href="/">

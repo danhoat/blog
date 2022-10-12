@@ -49,7 +49,8 @@ class PostController extends Controller
 
         $attributes = $request->validate([
             'title' => 'required|max:255',
-            'thumbnail' => 'required|image',
+            'thumbnail' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+
             'excerpt'      => 'required',
             'category_id'   => ['required',Rule::exists('categories','id')],
             'content'      => 'required',
@@ -57,8 +58,10 @@ class PostController extends Controller
 
         $attributes['author_id']    = auth()->user()->id;
         $attributes['slug']         = str_slug($request->title);
-        $path = request()->file('thumbnail')->store('thumbnails');
-        $attributes['thumbnail']    = $path;
+        //$image_path1 = $request->file('thumbnail')->store('thumbnails');
+        $image_path = $request->file('thumbnail')->store('public/thumbnails');
+
+        $attributes['thumbnail']    = $image_path1;
         $post = POST::create($attributes);
 
         return view('posts.create');
