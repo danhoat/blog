@@ -5,11 +5,11 @@
 
         <div class="block p-6 rounded-lg shadow-lg bg-white ">
             @if($errors)
-               {{-- {{$errors}}--}}
+{{--               {{$errors}}--}}
             @endif
-            <form method="POST" action="/admin/posts/save">
+            <form method="POST" action="/admin/posts/create" enctype="multipart/form-data">
                 @csrf
-                <div class="md:flex md:items-center mb-6 mt-5">
+                <div class="md:flex mb-6 mt-5">
                     <div class="md:w-1/6">
                         <label class="uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="inline-full-name">
                             Post Title
@@ -23,7 +23,7 @@
                     </div>
                 </div>
 
-                <div class="md:flex md:items-center mb-6 mt-5">
+                <div class="md:flex  mb-6 mt-5">
                     <div class="md:w-1/6">
                         <label class="uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="inline-full-name">
                            Excerpt
@@ -32,6 +32,19 @@
                     <div class="md:w-5/6">
                         <textarea required id="excerpt" name="excerpt" class="appearance-none block w-full text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name"></textarea>
                         @error('excerpt')
+                        <p class="text-red-500 text-xs mt-2"  > {{$message}}</p>
+                        @enderror
+                    </div>
+                </div>
+                <div class="md:flex mb-6 mt-5">
+                    <div class="md:w-1/6">
+                        <label class="uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="inline-full-name">
+                          Thumbnail
+                        </label>
+                    </div>
+                    <div class="md:w-5/6">
+                        <input required  value="{{old('file')}}" class="appearance-none block w-full text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="thumbnail" name="thumbnail" type="file">
+                        @error('title')
                         <p class="text-red-500 text-xs mt-2"  > {{$message}}</p>
                         @enderror
                     </div>
@@ -65,7 +78,7 @@
                 </div>
                 <!--End Category !-->
 
-                <div class="md:flex md:items-center mb-6 mt-5">
+                <div class="md:flex mb-6 mt-5">
                     <div class="md:w-1/6">
                         <label class="uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="inline-full-name">
                             Content

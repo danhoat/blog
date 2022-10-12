@@ -12,6 +12,7 @@ use App\Models\Category;
 use App\Models\Comment;
 //use Response;
 use Illuminate\Http\Response;
+use Illuminate\Validation\Rule;
 
 
 class PostController extends Controller
@@ -47,13 +48,17 @@ class PostController extends Controller
     public function save(Request $request){
 
         $attributes = $request->validate([
-            'title' => 'required|unique:posts|max:255',
+            'title' => 'required|max:255',
+            'thumbnail' => 'required|image',
             'excerpt'      => 'required',
-            'category_id'   => 'required|integer',
+            'category_id'   => ['required',Rule::exists('categories','id')],
             'content'      => 'required',
         ]);
+
         $attributes['author_id']    = auth()->user()->id;
         $attributes['slug']         = str_slug($request->title);
+        $path = request()->file('thumbnail')->store('thumbnails');
+        $attributes['thumbnail']    = $path;
         $post = POST::create($attributes);
 
         return view('posts.create');

@@ -20,6 +20,7 @@ return new class extends Migration
             $table->foreignId('category_id')->nullable();
             $table->text('excerpt');
             $table->text('content');
+            $table->string('thumbnail')->nullable();
             $table->string('slug')->unique();
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();

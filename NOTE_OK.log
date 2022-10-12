@@ -84,3 +84,9 @@ Route::post('submit-post', [AjaxController::class, 'submitPost'])->name('postSub
 
 
 php artisan make:middleware AdminsOnly
+
+
+php artisan storage:link
+php artisan storage:link --force
+
+==> whee file uploaded via form will available here.
