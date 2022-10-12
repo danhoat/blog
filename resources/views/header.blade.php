@@ -12,7 +12,6 @@
 
 <body style="font-family: Open Sans, sans-serif">
 <section class="px-6 py-8">
-    {{public_path('images')}}
     <nav class="md:flex md:justify-between md:items-center">
         <div>
             <a href="/">
@@ -25,8 +24,6 @@
             <a href="/users" class="text-xs font-bold uppercase">&nbsp; Users &nbsp;</a>
 
             @auth
-
-
                 <div class="relative flex lg:inline-flex items-center bg-gray-100 rounded-xl">
                     <div x-data="{ show: false }" @click.away="show=false">
 
