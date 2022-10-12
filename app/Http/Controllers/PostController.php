@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
@@ -39,6 +41,20 @@ class PostController extends Controller
     }
     public function create(){
 
+        return view('posts.create');
+
+    }
+    public function save(Request $request){
+
+        $attributes = $request->validate([
+            'title' => 'required|unique:posts|max:255',
+            'excerpt'      => 'required',
+            'category_id'   => 'required|integer',
+            'content'      => 'required',
+        ]);
+        $attributes['author_id']    = auth()->user()->id;
+        $attributes['slug']         = str_slug($request->title);
+        $post = POST::create($attributes);
 
         return view('posts.create');
 

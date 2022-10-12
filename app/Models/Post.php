@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
+    protected $guarded = [];
 
 //    protected $attributes = array(
 //        'ZipCode' => '',
@@ -20,7 +21,7 @@ class Post extends Model
 
     }
 
-    protected $appends = ['category','author','cate_name','post_date','comments'];
+    //protected $appends = ['category','author','cate_name','post_date','comments'];
 
     public function getCateNameAttribute(){
 

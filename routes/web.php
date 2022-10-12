@@ -58,6 +58,7 @@ Route::post('savecomment', [CommentController::class, 'store']);
 
 // Admin
 Route::get('admin/posts/create', [PostController::class,'create'])->middleware('admin');
+Route::post('admin/posts/save', [PostController::class,'save'])->middleware('admin');
 
 // End Admin
 Route::get("users",[UserController::class,'list']);
