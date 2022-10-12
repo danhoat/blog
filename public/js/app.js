@@ -1,5 +1,4 @@
 (function($){
-
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -27,6 +26,7 @@
                 success: function(data) {
                     // log response into console
                     console.log(data);
+                    location.reload();
                 }
             });
         }
