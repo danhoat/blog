@@ -58,10 +58,10 @@ class PostController extends Controller
         $slug =  str_slug($request->title);
         $attributes['author_id']    = auth()->user()->id;
         if (Post::where('slug', $slug)->exists()) {
-            $slug = $slug.'-'.now();
+            $slug = $slug.'-'.time();
         }
-        $attributes['slug']         = $$slug
-            
+        $attributes['slug']         = $slug;
+
         $base_path = 'public/thumbnails';
 
         $img_path = $request->file('thumbnail')->store($base_path); // $base_path. image(name.mimeextension).
