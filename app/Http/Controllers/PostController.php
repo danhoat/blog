@@ -57,11 +57,16 @@ class PostController extends Controller
         ]);
 
         $attributes['author_id']    = auth()->user()->id;
-        $attributes['slug']         = str_slug($request->title);
-        //$image_path1 = $request->file('thumbnail')->store('thumbnails');
-        $image_path = $request->file('thumbnail')->store('public/thumbnails');
+        $attributes['slug']         = str_slug($request->title).now();
 
-        $attributes['thumbnail']    = $image_path1;
+        //$image_path = $request->file('thumbnail')->store('public/thumbnails');
+
+        $base_path = 'public/thumbnails';
+
+        $img_path = $request->file('thumbnail')->store($base_path); // $base_path. image(name.mimeextension).
+        $img_name_only = str_replace($base_path.'/', "",$img_path);
+
+        $attributes['thumbnail']    =$img_name_only;
         $post = POST::create($attributes);
 
         return view('posts.create');
