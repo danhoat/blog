@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Category;
 use App\Models\Comment;
+//use Response;
+use Illuminate\Http\Response;
+
 
 class PostController extends Controller
 {
@@ -32,6 +35,12 @@ class PostController extends Controller
             return view('posts.detail',[
                 'post' => $post,
             ]);
+
+    }
+    public function create(){
+
+
+        return view('posts.create');
 
     }
     protected  function getPosts(){

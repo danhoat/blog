@@ -81,3 +81,6 @@ use App\Http\Controllers\AjaxController;
 
 Route::get('add-post', [AjaxController::class, 'myPost']);
 Route::post('submit-post', [AjaxController::class, 'submitPost'])->name('postSubmit');
+
+
+php artisan make:middleware AdminsOnly

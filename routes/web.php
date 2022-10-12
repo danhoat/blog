@@ -9,6 +9,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\CommentController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,41 +22,44 @@ use App\Http\Controllers\CommentController;
 */
 
 
-Route::get('/', [PostController::class,'index'])->name('home');
+Route::get('/', [PostController::class, 'index'])->name('home');
 
-Route::get('posts/{post:slug}', [PostController::class,'show'] );
-
+Route::get('posts/{post:slug}', [PostController::class, 'show']);
 
 
 Route::get('categories/{category:slug}', function (Category $category) {
 
-    return view('posts.index',[
+    return view('posts.index', [
         'posts' => $category->posts()->paginate(3),
         'currentCat' => $category,
-        'categories'=> Category::all(),
+        'categories' => Category::all(),
     ]);
 })->name('category');
 Route::get('author/{author:username}', function (User $author) {
 
-    return view('posts.index',[
+    return view('posts.index', [
         'posts' => $author->posts()->paginate(5),
         'categories' => Category::all(),
 
     ]);
 });
 
-Route::get('register', [RegisterController::class,'create'])->middleware('guest');
+Route::get('register', [RegisterController::class, 'create'])->middleware('guest');
 
-Route::post('register', [RegisterController::class,'store'])->middleware('guest');
+Route::post('register', [RegisterController::class, 'store'])->middleware('guest');
 
-Route::get('login', [SessionController::class,'loginForm'])->middleware('guest');
+Route::get('login', [SessionController::class, 'loginForm'])->middleware('guest');
 
-Route::post('login', [SessionController::class,'create'])->middleware('guest');
-Route::get('logout', [SessionController::class,'logout'])->middleware('auth');
+Route::post('login', [SessionController::class, 'create'])->middleware('guest');
+Route::get('logout', [SessionController::class, 'logout'])->middleware('auth');
 
-Route::post('savecomment', [CommentController::class,'store']);
+Route::post('savecomment', [CommentController::class, 'store']);
 
 
+// Admin
+Route::get('admin/posts/create', [PostController::class,'create'])->middleware('admin');
+
+// End Admin
 Route::get("users",[UserController::class,'list']);
 
 
