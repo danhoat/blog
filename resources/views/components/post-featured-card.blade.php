@@ -34,7 +34,7 @@
                 <p>
                    {{$post->exceprt}}
                 </p>
-                
+
             </div>
 
             <footer class="flex justify-between items-center mt-8">

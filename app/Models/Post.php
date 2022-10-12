@@ -73,4 +73,5 @@ class Post extends Model
     public function setPostDateAttribute(){
         $this->post_date = date('M d, Y', strtotime($this->created_at) );
     }
+
 }

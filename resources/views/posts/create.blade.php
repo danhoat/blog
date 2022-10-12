@@ -43,8 +43,9 @@
                         </label>
                     </div>
                     <div class="md:w-5/6">
-                        <input required  value="{{old('file')}}" class="appearance-none block w-full text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="thumbnail" name="thumbnail" type="file">
-                        @error('title')
+                        <input required  value="{{old('file')}}" class="appearance-none block w-full text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                               id="thumbnail" name="thumbnail" type="file"  accept="image/*" >
+                        @error('thumbnail')
                         <p class="text-red-500 text-xs mt-2"  > {{$message}}</p>
                         @enderror
                     </div>
