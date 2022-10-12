@@ -12,7 +12,7 @@
                     <img src="https://i.pravatar.cc/60?img={{ auth()->user()->id }}" width="60" height="40" />
                     <div class="ml-3 text-left">
                         <h5 class="font-bold">{{$post->author->username}}</h5>
-                        <h6>M{{$post->author->name}}</h6>
+                        <h6>{{$post->author->name}}</h6>
                     </div>
                 </div>
             </div>
