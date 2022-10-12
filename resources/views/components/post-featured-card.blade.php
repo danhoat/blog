@@ -25,16 +25,13 @@
                     </h1>
 
                     <span class="mt-2 block text-gray-400 text-xs">
-                                        Published <time>1 day ago</time>
-                                    </span>
+                        Published <time>{{ $post->created_at->diffForHumans() }}</time>
+                    </span>
                 </div>
             </header>
 
-            <div class="text-sm mt-2">
-                <p>
-                   {{$post->exceprt}}
-                </p>
-
+            <div class="text-sm mt-2 excerpt">
+                <p> {{$post->excerpt}} </p>
             </div>
 
             <footer class="flex justify-between items-center mt-8">

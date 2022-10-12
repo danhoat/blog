@@ -25,7 +25,7 @@
                     </h1>
 
                     <span class="mt-2 block text-gray-400 text-xs">
-                         PuPublished <time>{{ $post->created_at->diffForHumans() }}</time>
+                         Published <time>{{ $post->created_at->diffForHumans() }}</time>
                      </span>
                 </div>
             </header>
@@ -35,9 +35,6 @@
                     {{$post->excerpt}}
                 </p>
 
-                <p class="mt-4">
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                </p>
             </div>
 
             <footer class="flex justify-between items-center mt-8">
