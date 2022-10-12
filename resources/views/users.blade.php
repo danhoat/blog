@@ -5,9 +5,10 @@
             <h1> List Users</h1>
         </div>
         <div class="content">
-`       @if(count($users) > 0)
+      @if(count($users) > 0)
+
                 <p class=""> Total: {{$users->total() }} users.</p>
-            <p>&nbsp;</p>
+
         <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
