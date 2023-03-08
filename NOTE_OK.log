@@ -1,3 +1,6 @@
+php artisan serve
+=> run in localhost.
+http://127.0.0.1:8000
 tailwind.min.css
 
 php artisan migrate:refresh
@@ -11,11 +14,17 @@ php artisan make:migration create_posts_table
 It auto generate a .php file with name: 2022_10_07_133053_create_posts_table.php
 open 2022_10_07_133053_create_posts_table.php file to define columns for table posts.migrate
 
+chạy dòng này để thêm list .php file  auto excect in next time.
+
+php artisan migrate --path=database/migrations/2023_03_08_083625_create_posts_table.php
+
+
 sau khi define xong.migrate
 RUn:
 php artisan migrate
 ==> Tao table posts with columns done.
 
+php artisan migrate => chỉ run những file php có trong bảng migrations.
 
 php artisan make:seeder UserSeeder
 then run:
