@@ -22,7 +22,16 @@ use App\Http\Controllers\CommentController;
 */
 
 
-Route::get('/', [PostController::class, 'index'])->name('home');
+Route::get('/', function (Post $post){
+
+
+    return view('posts.posts', [
+        'posts'         => Post::latest()->get(),
+        'categories'    => Category::all()
+    ]);
+});
+
+//Route::get('/', [PostController::class, 'index'])->name('home');
 
 Route::get('posts/{post:slug}', [PostController::class, 'show']);
 
@@ -30,16 +39,17 @@ Route::get('posts/{post:slug}', [PostController::class, 'show']);
 Route::get('categories/{category:slug}', function (Category $category) {
 
     return view('posts.index', [
-        'posts' => $category->posts()->paginate(3),
-        'currentCat' => $category,
-        'categories' => Category::all(),
+        'posts'         => $category->posts()->paginate(3),
+        'currentCat'    => $category,
+        'categories'    => Category::all(),
     ]);
 })->name('category');
+
 Route::get('author/{author:username}', function (User $author) {
 
     return view('posts.index', [
-        'posts' => $author->posts()->paginate(5),
-        'categories' => Category::all(),
+        'posts'         => $author->posts()->paginate(5),
+        'categories'    => Category::all(),
 
     ]);
 });

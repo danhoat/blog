@@ -1,11 +1,11 @@
-123
+
 <x-layout :categories="$categories">
-    @section('content') 
+    @section('content')
 
         <main class="max-w-6xl mx-auto mt-6 lg:mt-20 space-y-6">
 
 
-            @if( $posts->total() )
+            @if( $posts )
                 @if(request('search') || request('category'))
                     <p> Search Results: {{$posts->total()}} posts found.</p>
                 @endif
@@ -17,7 +17,6 @@
                 @endforeach
 
             </div>
-            {{ $posts->links() }}
 
             @else
             No post found
