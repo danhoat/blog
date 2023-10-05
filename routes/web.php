@@ -22,16 +22,16 @@ use App\Http\Controllers\CommentController;
 */
 
 
-Route::get('/', function (Post $post){
+// Route::get('/', function (Post $post){
 
 
-    return view('posts.posts', [
-        'posts'         => Post::latest()->get(),
-        'categories'    => Category::all()
-    ]);
-});
+//     return view('posts.posts', [
+//         'posts'         => Post::latest()->get(),
+//         'categories'    => Category::all()
+//     ]);
+// });
 
-//Route::get('/', [PostController::class, 'index'])->name('home');
+Route::get('/', [PostController::class, 'index'])->name('home');
 
 Route::get('posts/{post:slug}', [PostController::class, 'show']);
 
