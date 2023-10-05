@@ -6,7 +6,9 @@ tailwind.min.css
 php artisan migrate:refresh
 ==> remove all table was created.
 
+php artisan migrate
 
+==> chay tat ca cac cau lenh, tao bang table.
 
 php artisan make:migration create_posts_table
 
