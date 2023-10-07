@@ -13,10 +13,10 @@
                             <label> Status</label>
                             <select class="act_filter" name="status">
                                 <option value="" > All </option>
-                                <option value="approved" @if($status == 'approved') selected @endif> Approved</option>
-                                <option value="process" @if($status == 'process') selected @endif >In Process</option>
-                                <option value="closed" @if($status == 'closed') selected @endif> Closed</option>
-                                <option value="draft" @if($status == 'draft') selected @endif> Draft</option>
+                                <option value="todo" @if($status == 'todo') selected @endif> To Do</option>
+                                <option value="doing" @if($status == 'doing') selected @endif > Doing</option>
+                                <option value="done" @if($status == 'done') selected @endif> Done</option>
+
                             </select>
                         </div>
 

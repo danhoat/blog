@@ -26,7 +26,7 @@
                 </div>
 
                 <!-- Status !-->
-                <div class="md:flex md:items-center mb-6 mt-5">
+                <div class="md:flex md:items-center mb-6 mt-5" >
                     <div class="md:w-1/6">
                         <label class="uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="inline-full-name">
                            Status
@@ -35,10 +35,10 @@
                     <div class="md:w-5/6 relative">
 
                         <select name="status" required class="inline-block appearance-none w-full bg-white border border-gray-200 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-                            <option value="approved" @if($post->status == 'publish') selected @endif > Approved </option>
-                            <option value="process" @if($post->status == 'process') selected @endif > In Process </option>
-                             <option value="closed" @if($post->status == 'closed') selected @endif > Close</option>
-                            <option value="draft" @if($post->status == 'draft') selected @endif > Draft </option>
+                            <option value="todo" @if($post->status == 'todo') selected @endif > To Do </option>
+                            <option value="doing" @if($post->status == 'doing') selected @endif > Doing</option>
+                            <option value="done" @if($post->status == 'done') selected @endif > Done</option>
+
                         </select>
 
 
@@ -79,7 +79,7 @@
                     </div>
                 </div>
                 <!-- Category !-->
-                <div class="md:flex md:items-center mb-6 mt-5">
+                <div class="md:flex md:items-center mb-6 mt-5" style="display:none;">
                     <div class="md:w-1/6">
                         <label class="uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="inline-full-name">
                            Category

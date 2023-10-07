@@ -101,7 +101,8 @@ class PostController extends Controller
         }
         $post = POST::create($attributes);
 
-        return view('posts.create');
+       // return view('posts.create');
+        return redirect('/admin/tasks/');
 
     }
     protected  function getPosts(){
@@ -139,7 +140,7 @@ class PostController extends Controller
         if(!empty($date))
             $posts = $post->whereDate('created_at', '=', $date);
 
-        $posts = $posts->paginate(3)->withQueryString();;
+        $posts = $posts->latest()->paginate(6)->withQueryString();;
 
 
         return view('posts.list',[
