@@ -23,4 +23,24 @@
             });
         }
     });
+
+    $(".btn_del").click(function(){
+
+        let post_id = $(this).attr('post_id');
+
+        $.ajax({
+            url: "/delete_post",
+            type: 'POST',
+            dataType: "json",
+            data: {post_id:post_id},
+            beforeSend: function( xhr ) {
+                alert('are you sure?');
+                $("<button>").addClass("animate-spin");
+            },
+            success: function(res) {
+                if( res.success ) location.reload();
+                else alert(res.msg);
+            }
+        });
+    });
 })(jQuery);

@@ -132,3 +132,6 @@ footer{
 footer h2{
     line-height: 65px;
 }
+.btn-act{
+    float: right;
+}

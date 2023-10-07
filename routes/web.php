@@ -69,7 +69,12 @@ Route::post('savecomment', [CommentController::class, 'store']);
 // Admin
 Route::get('admin/posts/create', [PostController::class,'create'])->middleware('admin');
 Route::post('admin/posts/create', [PostController::class,'save'])->middleware('admin');
+Route::get('admin/posts/{post:id}/edit/', [PostController::class,'edit'])->middleware('admin');
+Route::post('admin/posts/{post:id}/update', [PostController::class,'update'])->middleware('admin');
 
+
+Route::get('admin/posts/list', [PostController::class,'list'])->middleware('admin');
+Route::post('delete_post', [PostController::class, 'delete']);
 // End Admin
 Route::get("users",[UserController::class,'list']);
 

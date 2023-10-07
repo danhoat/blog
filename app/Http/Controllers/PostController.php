@@ -10,8 +10,8 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Category;
 use App\Models\Comment;
-//use Response;
-use Illuminate\Http\Response;
+use Response;
+//use Illuminate\Http\Response;
 use Illuminate\Validation\Rule;
 
 
@@ -35,14 +35,39 @@ class PostController extends Controller
 
     }
     public function show(Post $post){
-            return view('posts.detail',[
-                'post' => $post,
-            ]);
+
+        return view('posts.detail',[
+            'post' => $post,
+        ]);
 
     }
     public function create(){
 
         return view('posts.create');
+
+    }
+    public function edit(Post $post){
+        return view('posts.edit',[
+            'post' => $post,
+        ]);
+
+
+    }
+    public function update(Request $request){
+
+
+
+        $post_id = isset($_POST['post_id']) ? $_POST['post_id'] : '';
+
+        $attributes = $request->validate([
+            'title'         => 'required|max:255',
+            'excerpt'      => 'required',
+            'category_id'   => ['required',Rule::exists('categories','id')],
+            'content'      => 'required',
+        ]);
+
+        $t = Post::where("id", $post_id)->update($attributes);
+
 
     }
     public function save(Request $request){
@@ -75,5 +100,33 @@ class PostController extends Controller
     }
     protected  function getPosts(){
         return Post::latest()->filter()->get();
+    }
+    public  function list(User $author){
+        $author_id = auth()->user()->id;
+
+         $t = Post::where('author_id',$author_id)->get();
+        //$t =  Post::latest()->get();
+
+         $tt = Post::where('author_id',22)->get();
+        return view('posts.list',[
+           'posts' => $tt
+        ]);
+    }
+
+    public function delete(){
+
+        $post_id = isset($_POST['post_id']) ? (int) $_POST['post_id'] : 0;
+        $post       = Post::where('id', $post_id)->first();
+
+        if( ! auth()->user()  || auth()->user()->id !== $post->author_id ){
+
+            $res = array('success' => false,'msg' => "Denied.You can not delete this post.");
+            return Response::json($res);
+        }
+
+        $post->delete();
+        $response = array('success' => true,'msg' => 'Post has been deleted.');
+        return Response::json($response);
+
     }
 }
