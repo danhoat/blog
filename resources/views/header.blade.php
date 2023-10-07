@@ -28,9 +28,8 @@
                     <div x-data="{ show: false }" @click.away="show=false">
 
                         <button @click = "show = ! show" class="py-2 pl-3 pr-9 text-sm rounded-xl"> Welcome {{auth()->user()->name}}</button>
-                        <div x-show="show" class=" py-2 absolute bg-gray-100   pl-3 pr-9 text-sm" style="display: none">
-                            <a href="/admin/posts/create" class=" text-lef text-sm leading-6 "> Add Post</a>
-                            <a href="/?" class=" text-lefttext-sm leading-6"> ABC </a>
+                        <div x-show="show" class=" py-2 absolute bg-gray-100   pl-3 pr-9 text-sm" style="display: none; width: 180px;">
+                            <a href="/admin/posts/create" class=" text-lef text-sm leading-6 "> Add New Post</a>
                         </div>
                     </div>
                     <svg class="transform -rotate-90 absolute pointer-events-none" style="right: 12px;" width="22"

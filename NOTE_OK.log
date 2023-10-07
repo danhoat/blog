@@ -101,3 +101,6 @@ php artisan storage:link
 php artisan storage:link --force
 
 ==> whee file uploaded via form will available here.
+php artisan serve
+php artisan serve
+
