@@ -15,7 +15,11 @@
                        style="font-size: 10px">{{$post->category->name}}</a>
                 </div>
                 <div class="mt-4">
-                    <h1 class="text-3xl">{{$post->title}} - {{$post->id}}</h1>
+                    <h1 class="text-3xl">
+                        <a href="posts/{{$post->slug}}">
+                            {{$post->title}}
+                        </a>
+                    </h1>
                     <span class="mt-2 block text-gray-400 text-xs">
                         Published <time>{{ $post->created_at->diffForHumans() }}</time>
                     </span>

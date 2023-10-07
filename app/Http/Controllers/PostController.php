@@ -65,9 +65,9 @@ class PostController extends Controller
             'category_id'   => ['required',Rule::exists('categories','id')],
             'content'      => 'required',
         ]);
-
-        $t = Post::where("id", $post_id)->update($attributes);
-
+        $post = Post::where("id", $post_id);
+        $post->update($attributes);
+        return redirect("/posts/{$post->first()->slug}");
 
     }
     public function save(Request $request){
