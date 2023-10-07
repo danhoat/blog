@@ -4,16 +4,35 @@
         <main class="max-w-6xl mx-auto mt-6 lg:mt-20 space-y-6">
 
             <h1 class="text-4xl post-item-title"> List My Tasks</h1>
-            <div class="lg:grid lg:grid-cols-3">
-                <div class="">Filter</div>
-                    <div class="form">
-                        <select class="act_filter">
-                            <option value="approved" @if($status == 'approved') selected @endif> Approved</a></option>
-                            <option value="process" @if($status == 'process') selected @endif >In Process</a></option>
-                            <option value="closed" @if($status == 'closed') selected @endif> Closed</a></option>
-                            <option value="draft" @if($status == 'draft') selected @endif> Draft</a></option>
-                        </select>
+            <div class="md:flex mb-6 mt-5 bar-filter">
+                <div class="md:w-1/6">Filter</div>
+
+                <div class="form frm-task-filter md:flex md:w-5/6">
+                    <form action="/admin/tasks/" class="md:flex">
+                        <div class="md:w-1/3">
+                            <label> Status</label>
+                            <select class="act_filter" name="status">
+                                <option value="" > All </option>
+                                <option value="approved" @if($status == 'approved') selected @endif> Approved</option>
+                                <option value="process" @if($status == 'process') selected @endif >In Process</option>
+                                <option value="closed" @if($status == 'closed') selected @endif> Closed</option>
+                                <option value="draft" @if($status == 'draft') selected @endif> Draft</option>
+                            </select>
+                        </div>
+
+                    <div class="select-date md:w-1/3">
+                        <label>Date</label>
+                        <input type="text" readonly name="date" id="datepicker" placeholder="Select Date"  autocomplete="off"></div>
+                    <div class="md:w-1/3">
+                        <label>&nbsp;</label>
+                        <button type="submit" class="transition-colors duration-300 bg-blue-500 hover:bg-blue-600 mt-4 lg:mt-0 lg:ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-8">
+                            Search
+                        </button>
                     </div>
+                </form>
+
+
+                </div>
             </div>
            @if(count($posts) > 0)
 

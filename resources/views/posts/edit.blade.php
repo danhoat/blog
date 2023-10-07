@@ -64,7 +64,7 @@
                         @enderror
                     </div>
                 </div>
-                <div class="md:flex mb-6 mt-5">
+                <div class="md:flex mb-6 mt-5" style="display: none;">
                     <div class="md:w-1/6">
                         <label class="uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="inline-full-name">
                           Thumbnail

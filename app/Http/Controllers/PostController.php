@@ -69,6 +69,9 @@ class PostController extends Controller
         return redirect("/posts/{$post->first()->slug}");
 
     }
+    /**
+     * Save a  post after submit form.
+     **/
     public function save(Request $request){
 
         $attributes = $request->validate([
@@ -115,7 +118,11 @@ class PostController extends Controller
         ]);
     }
 
-     public  function tasks(Post $post){
+    /**
+     * List all task of current user.
+     *
+     **/
+    public  function tasks(Post $post){
         $status = isset($_GET['status']) ? $_GET['status']:'';
         $author_id = auth()->user()->id;
 
@@ -125,8 +132,12 @@ class PostController extends Controller
         if($status){
             $args['status'] = $status;
         }
+        $posts = Post::where($args);
+        $date = isset($_GET['date']) ? $_GET['date'] : '';
+        if(!empty($date))
+            $posts = $post->whereDate('created_at', '=', $date);
 
-        $posts = Post::where($args)->paginate(3)->withQueryString();;
+        $posts = $posts->paginate(3)->withQueryString();;
 
 
         return view('posts.list',[

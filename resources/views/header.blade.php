@@ -5,11 +5,21 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+ <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
 <meta name="csrf-token" content="{{ csrf_token() }}" />
-<script src="{{ asset('js/app.js') }}" defer></script>
+
 <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/datepicker.min.js"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/datepicker.js" integrity="sha512-BVaJXyeBQR4c+qB9PdWqgPdGMwhKQs8+nyKiyr1qaaLLhfloHm9mN5KX+1ttyo2wh5u65gH9du2/EiCGvR53Kg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+<script src="{{ asset('js/app.js') }}" defer></script>
 
 <body style="font-family: Open Sans, sans-serif">
 <section class="px-6 py-8">

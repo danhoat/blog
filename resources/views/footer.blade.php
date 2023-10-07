@@ -27,4 +27,15 @@
     </div>
 </footer>
 </section>
+<script type="text/javascript">
+    $(document).ready(function(){
+        console.log('123');
+      // $("#Datetimepicker").datetimepicker().on('changeDate', function(e) {
+      //     console.log('hey');
+      //   });
+    }) ;
+
+
+
+</script>
 </body>
