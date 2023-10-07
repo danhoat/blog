@@ -1,5 +1,6 @@
 <x-layout :post="$post">
     @section('content')
+
     <main class="max-w-6xl mx-auto mt-10 lg:mt-20 space-y-6">
         <h1 class="block uppercase tracking-wide  space-y-6 uppercase tracking-wide "> Create New Post </h1>
 
@@ -23,6 +24,29 @@
                         <input type="hidden" name="post_id" value="{{$post->id}}">
                     </div>
                 </div>
+
+                <!-- Status !-->
+                <div class="md:flex md:items-center mb-6 mt-5">
+                    <div class="md:w-1/6">
+                        <label class="uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="inline-full-name">
+                           Status
+                        </label>
+                    </div>
+                    <div class="md:w-5/6 relative">
+
+                        <select name="status" required class="inline-block appearance-none w-full bg-white border border-gray-200 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                            <option value="publish" @if($post->status == 'publish') selected @endif > Publish </option>
+                            <option value="pending" @if($post->status == 'pending') selected @endif > Pending </option>
+                            <option value="draft" @if($post->status == 'draft') selected @endif > Draft </option>
+                        </select>
+                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- end status !-->
 
                 <div class="md:flex  mb-6 mt-5">
                     <div class="md:w-1/6">
