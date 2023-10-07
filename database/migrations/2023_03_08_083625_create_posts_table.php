@@ -16,12 +16,15 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->foreignId('author_id')->constrained('users')->cascadeOnDelete();
-            $table->foreignId('category_id')->nullable();
+            $table->string('slug')->unique();
+            $table->char('status', 10);// publish, pending, draft
             $table->text('excerpt');
             $table->text('content');
+            $table->foreignId('author_id')->constrained('users')->cascadeOnDelete();
+
+            $table->foreignId('category_id')->nullable();
             $table->string('thumbnail')->nullable();
-            $table->string('slug')->unique();
+
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
         });

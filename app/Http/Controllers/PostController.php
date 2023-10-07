@@ -55,15 +55,14 @@ class PostController extends Controller
     }
     public function update(Request $request){
 
-
-
         $post_id = isset($_POST['post_id']) ? $_POST['post_id'] : '';
 
         $attributes = $request->validate([
             'title'         => 'required|max:255',
-            'excerpt'      => 'required',
+            'status'        => 'required|max:10',
+            'excerpt'       => 'required',
             'category_id'   => ['required',Rule::exists('categories','id')],
-            'content'      => 'required',
+            'content'       => 'required',
         ]);
         $post = Post::where("id", $post_id);
         $post->update($attributes);
@@ -73,12 +72,12 @@ class PostController extends Controller
     public function save(Request $request){
 
         $attributes = $request->validate([
-            'title' => 'required|max:255',
-            'thumbnail' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
-
-            'excerpt'      => 'required',
+            'title'         => 'required|max:255',
+            'thumbnail'     => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+            'status'        => 'required|max:10',
+            'excerpt'       => 'required',
             'category_id'   => ['required',Rule::exists('categories','id')],
-            'content'      => 'required',
+            'content'       => 'required',
         ]);
         $slug =  str_slug($request->title);
         $attributes['author_id']    = auth()->user()->id;

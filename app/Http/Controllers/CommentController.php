@@ -16,15 +16,11 @@ class CommentController extends Controller
             return Response::json($res);
         }
         $attribues = $request->validate([
-            'post_id' => 'required|max:255',
+            'post_id' => 'required',
             'user_id' => 'required',
-            'content' => 'required',
+            'body' => 'required',
         ]);
-//        $args = array(
-//            'post_id' => $request->post_id,
-//            'user_id' => $request->user_id,
-//            'content' => $request->content
-//        );
+
         $comment = Comment::create($attribues);
         return Response::json($comment);
     }

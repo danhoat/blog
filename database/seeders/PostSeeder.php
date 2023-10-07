@@ -26,6 +26,7 @@
         DB::table('posts')->insert([
             'title'         => 'My First Post',
             'slug'          => 'my-first-post',
+            'status'        => 'publish',
             'author_id'      => 1,
             'category_id'   => 1,
             'excerpt'        => getRandomText($length),
@@ -37,6 +38,7 @@
         DB::table('posts')->insert([
             'title'      => 'My Second Post',
             'slug'     => 'my-second-post',
+            'status'        => 'publish',
             'author_id' => 2,
             'category_id' => 2,
             'excerpt' => getRandomText($length),
@@ -47,6 +49,7 @@
         DB::table('posts')->insert([
             'title'      => 'Laravel Tutorial Post',
             'slug'     => 'laravel-tutorial-post',
+            'status'        => 'publish',
             'author_id' => 3,
             'category_id' => 2,
             'excerpt' => getRandomText($length),
@@ -57,6 +60,7 @@
         DB::table('posts')->insert([
             'title'      => 'Laravel  Post',
             'slug'     => 'laravel-post',
+            'status'        => 'publish',
             'author_id' => 3,
             'category_id' => 2,
             'excerpt' => getRandomText($length),
@@ -67,6 +71,7 @@
         DB::table('posts')->insert([
             'title'      => 'Laravel  Post High Level',
             'slug'     => 'laravel-post-high-level',
+            'status'        => 'publish',
             'author_id' => 3,
             'category_id' => 2,
             'excerpt' =>getRandomText($length),

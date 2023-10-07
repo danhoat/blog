@@ -28,6 +28,7 @@ class PostFactory extends Factory
         return [
             'title' => $title,
             'slug' => str_slug($title),
+            'status'        => 'publish',
             'excerpt' => $this->faker->sentence,
             'content' => $this->faker->realText(1000),
 //            'author_id' => \App\Models\User::factory()->create()->id,
