@@ -21,8 +21,10 @@ class PostController extends Controller
             //$posts = Post::all();
             //$posts = Post::latest()->with(['category','author'])->get();
 
-            //$posts = Post::where('status','publish')->latest()->filter( request(['search','category','author']) )
-              //  ->paginate(10)->withQueryString();
+            /*
+            $posts = Post::where('status','publish')->latest()->filter( request(['search','category','author']) )
+               ->paginate(10)->withQueryString();
+              */
                 $posts = Post::latest()->filter( request(['search','category','author']) )
                 ->paginate(10)->withQueryString();
           //  $posts->appends(Request::all())->links();
@@ -63,7 +65,7 @@ class PostController extends Controller
             'title'         => 'required|max:255',
             'status'        => 'required|max:10',
             'excerpt'       => 'required',
-            'category_id'   => ['required',Rule::exists('categories','id')],
+            // 'category_id'   => ['required',Rule::exists('categories','id')],
             'content'       => 'required',
         ]);
         $post = Post::where("id", $post_id);
