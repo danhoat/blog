@@ -20,7 +20,7 @@
             var formData = {
                 post_id : $("#post_id").val(),
                 user_id : $("#user_id").val(),
-                content : $("#content").val()
+                body : $("#content").val()
             };
 
             $.ajax({

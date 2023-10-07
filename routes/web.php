@@ -33,11 +33,10 @@ use Illuminate\Support\Facades\Auth;
 // });
 
 //Route::get('/', [PostController::class, 'index'])->name('home');
+
 Route::get('/', function(){
     if (Auth::check()) {
-        var_dump(123);
         return redirect('admin/tasks');
-
    }
    return view('sessions.login_form');
 
@@ -83,7 +82,7 @@ Route::get('admin/posts/{post:id}/edit/', [PostController::class,'edit'])->middl
 Route::post('admin/posts/{post:id}/update', [PostController::class,'update'])->middleware('admin');
 
 
-Route::get('admin/posts/list', [PostController::class,'list'])->middleware('admin');
+//Route::get('admin/posts/list', [PostController::class,'list'])->middleware('admin');
 Route::get('admin/tasks/', [PostController::class,'tasks'])->middleware('admin');
 Route::post('delete_post', [PostController::class, 'delete']);
 // End Admin

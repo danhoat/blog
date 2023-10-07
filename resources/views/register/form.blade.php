@@ -19,14 +19,14 @@
 
                     <div class="form-group mb-5">
                         <label class="mb-2 block uppercase font-bold text-xs">Email </label>
-                        <input type="email" class="rounded w-full border border-gray-300 p-2 m-height-30"  name="email" placeholder="email@example.com" value="{{ old('email')}}">
+                        <input required type="email" class="rounded w-full border border-gray-300 p-2 m-height-30"  name="email" placeholder="email@example.com" value="{{ old('email')}}">
                         @error('email')
                         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                         @enderror
                     </div>
                     <div class="form-group mb-5">
                         <label class="mb-2 block uppercase font-bold text-xs text-gray-700">Username</label>
-                        <input type="text" name="username" class="rounded w-full border border-gray-300 p-2 m-height-30" placeholder="username" value="{{ old('username')}}">
+                        <input required type="text" name="username" class="rounded w-full border border-gray-300 p-2 m-height-30" placeholder="username" value="{{ old('username')}}">
                         @error('username')
                         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                         @enderror
@@ -37,7 +37,7 @@
                     </div>
                     <div class="form-group mb-5">
                         <label for="exampleFormControlInput1">Password </label>
-                        <input type="password" name="password" class="rounded w-full border border-gray-300 p-2 m-height-30" placeholder="Password">
+                        <input required type="password" name="password" class="rounded w-full border border-gray-300 p-2 m-height-30" placeholder="Password">
                         @error('password')
                         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                         @enderror
