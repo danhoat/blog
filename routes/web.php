@@ -74,6 +74,7 @@ Route::post('admin/posts/{post:id}/update', [PostController::class,'update'])->m
 
 
 Route::get('admin/posts/list', [PostController::class,'list'])->middleware('admin');
+Route::get('admin/tasks/', [PostController::class,'tasks'])->middleware('admin');
 Route::post('delete_post', [PostController::class, 'delete']);
 // End Admin
 Route::get("users",[UserController::class,'list']);

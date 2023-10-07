@@ -72,8 +72,8 @@ class PostController extends Controller
     public function save(Request $request){
 
         $attributes = $request->validate([
-            'title'         => 'required|max:255',
-            'thumbnail'     => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+            'title'         => 'required',
+           // 'thumbnail'     => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
             'status'        => 'required|max:10',
             'excerpt'       => 'required',
             'category_id'   => ['required',Rule::exists('categories','id')],
@@ -86,12 +86,14 @@ class PostController extends Controller
         }
         $attributes['slug']         = $slug;
 
-        $base_path = 'public/thumbnails';
 
-        $img_path = $request->file('thumbnail')->store($base_path); // $base_path. image(name.mimeextension).
-        $img_name_only = str_replace($base_path.'/', "",$img_path);
+        if($request->thumbnail){
+            $base_path = 'public/thumbnails';
+            $img_path = $request->file('thumbnail')->store($base_path); // $base_path. image(name.mimeextension).
+            $img_name_only = str_replace($base_path.'/', "",$img_path);
 
-        $attributes['thumbnail']    =$img_name_only;
+            $attributes['thumbnail']    =$img_name_only;
+        }
         $post = POST::create($attributes);
 
         return view('posts.create');
@@ -100,15 +102,36 @@ class PostController extends Controller
     protected  function getPosts(){
         return Post::latest()->filter()->get();
     }
-    public  function list(User $author){
+    public  function list(){
         $author_id = auth()->user()->id;
 
          $t = Post::where('author_id',$author_id)->get();
         //$t =  Post::latest()->get();
 
-         $tt = Post::where('author_id',22)->get();
+         $tt = Post::where('author_id',$author_id)->get();
         return view('posts.list',[
-           'posts' => $tt
+           'posts' => $tt,
+           'status' => '0'
+        ]);
+    }
+
+     public  function tasks(Post $post){
+        $status = isset($_GET['status']) ? $_GET['status']:'';
+        $author_id = auth()->user()->id;
+
+        $args = array(
+            'author_id' =>  $author_id
+        );
+        if($status){
+            $args['status'] = $status;
+        }
+
+        $posts = Post::where($args)->paginate(3)->withQueryString();;
+
+
+        return view('posts.list',[
+           'posts' => $posts,
+           'status' => $status
         ]);
     }
 

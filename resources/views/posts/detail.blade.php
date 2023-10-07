@@ -21,7 +21,7 @@
 
             <div class="col-span-8">
                 <div class="hidden lg:flex justify-between mb-6">
-                    <a href="/"
+                    <a href="/admin/posts/list"
                        class="transition-colors duration-300 relative inline-flex items-center text-lg hover:text-blue-500">
                         <svg width="22" height="22" viewBox="0 0 22 22" class="mr-2">
                             <g fill="none" fill-rule="evenodd">
@@ -33,7 +33,7 @@
                             </g>
                         </svg>
 
-                        Back to Posts
+                        Back to List
                     </a>
 
                     <div class="space-x-2">
