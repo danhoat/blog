@@ -40,13 +40,17 @@
 
         let post_id = $(this).attr('post_id');
 
+        const response = confirm("Are you sure ?");
+
+        if ( !response ) {
+            return 1;
+        }
         $.ajax({
             url: "/delete_post",
             type: 'POST',
             dataType: "json",
             data: {post_id:post_id},
             beforeSend: function( xhr ) {
-                alert('are you sure?');
                 $("<button>").addClass("animate-spin");
             },
             success: function(res) {

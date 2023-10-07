@@ -32,3 +32,10 @@
     padding: 10px 15px;
     border-radius: 9px;
 }
+.frm-task-filter form button{
+	position: relative;
+	top: 10px;
+}
+.no-posts{
+	padding: 50px 10px
+}
