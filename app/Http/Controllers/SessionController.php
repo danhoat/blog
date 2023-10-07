@@ -24,7 +24,7 @@ class SessionController extends Controller
     }
 
     public  function loginForm(){
-        if( auth())
+        if( auth() )
             redirect('/');
         return view('sessions.login_form');
     }

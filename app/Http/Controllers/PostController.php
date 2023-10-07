@@ -21,7 +21,9 @@ class PostController extends Controller
             //$posts = Post::all();
             //$posts = Post::latest()->with(['category','author'])->get();
 
-            $posts = Post::where('status','publish')->latest()->filter( request(['search','category','author']) )
+            //$posts = Post::where('status','publish')->latest()->filter( request(['search','category','author']) )
+              //  ->paginate(10)->withQueryString();
+                $posts = Post::latest()->filter( request(['search','category','author']) )
                 ->paginate(10)->withQueryString();
           //  $posts->appends(Request::all())->links();
 
@@ -79,7 +81,7 @@ class PostController extends Controller
            // 'thumbnail'     => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
             'status'        => 'required|max:10',
             'excerpt'       => 'required',
-            'category_id'   => ['required',Rule::exists('categories','id')],
+            //'category_id'   => ['required',Rule::exists('categories','id')],
             'content'       => 'required',
         ]);
         $slug =  str_slug($request->title);
@@ -108,7 +110,7 @@ class PostController extends Controller
     public  function list(){
         $author_id = auth()->user()->id;
 
-         $t = Post::where('author_id',$author_id)->get();
+        $t = Post::where('author_id',$author_id)->get();
         //$t =  Post::latest()->get();
 
          $tt = Post::where('author_id',$author_id)->get();
@@ -141,8 +143,9 @@ class PostController extends Controller
 
 
         return view('posts.list',[
-           'posts' => $posts,
-           'status' => $status
+           'posts'  => $posts,
+           'status' => $status,
+           'date' => $date
         ]);
     }
 

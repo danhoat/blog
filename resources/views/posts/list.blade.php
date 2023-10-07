@@ -22,7 +22,7 @@
 
                     <div class="select-date md:w-1/3">
                         <label>Date</label>
-                        <input type="text" readonly name="date" id="datepicker" placeholder="Select Date"  autocomplete="off"></div>
+                        <input type="text" readonly name="date" id="datepicker" value="{{$date}}" placeholder="Select Date"  autocomplete="off"></div>
                     <div class="md:w-1/3">
 
                         <button type="submit" class="transition-colors duration-300 bg-blue-500 hover:bg-blue-600 mt-4 lg:mt-0 lg:ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-8">

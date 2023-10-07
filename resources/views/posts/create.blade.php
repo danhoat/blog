@@ -31,7 +31,7 @@
                     </div>
                     <div class="md:w-5/6 relative">
 
-                        <select name="status" required class="inline-block appearance-none w-full bg-white border border-gray-200 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                        <select name="status" required123 class="inline-block appearance-none w-full bg-white border border-gray-200 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
                             <option value="approved"> Approved </option>
                             <option value="process"> In Process </option>
                             <option value="closed"> Closed </option>
@@ -86,7 +86,7 @@
                         @php
                         $categories = \App\Models\Category::all();
                         @endphp
-                        <select name="category_id" " required class="inline-block appearance-none w-full bg-white border border-gray-200 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                        <select name="category_id"  required123 class="inline-block appearance-none w-full bg-white border border-gray-200 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
                             @if($categories)
                                 <option value="">Select Category</option>
                                 @foreach($categories as $cat)

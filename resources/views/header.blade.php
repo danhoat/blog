@@ -58,13 +58,18 @@
                 </div>
                 <a href="/logout" class="text-xs font-bold uppercase">&nbsp; Logout &nbsp;</a>
             @else
+                <!-- <a href="/login" class="text-xs font-bold uppercase">&nbsp; Login &nbsp;</a> -->
                 <a href="/login" class="text-xs font-bold uppercase">&nbsp; Login &nbsp;</a>
-                <a href="/register" class="text-xs font-bold uppercase">&nbsp; Register &nbsp;</a>
             @endauth
-
-            <a href="#" class="bg-blue-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">
-                Subscribe for Updates
+            @auth
+            <a href="/admin/posts/create" class="bg-blue-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">
+                Create New Task
             </a>
+            @else
+            <a href="/register" class="bg-blue-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">
+               Register
+            </a>
+            @endauth
         </div>
     </nav>
 
