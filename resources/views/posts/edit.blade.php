@@ -136,7 +136,7 @@
                       active:bg-blue-800 active:shadow-lg
                       transition
                       duration-150
-                      ease-in-out">Save</button>
+                      ease-in-out">Update</button>
                 </div>
             </form>
         </div>

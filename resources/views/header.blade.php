@@ -75,7 +75,7 @@
 
     <header class="max-w-xl mx-auto mt-20 text-center">
         <h1 class="text-4xl">
-            <span class="text-blue-500">Laravel Test</span> ITC
+            <span class="text-blue-500">Laravel Test</span> IT Consultis
         </h1>
 
         <h2 class="inline-flex mt-2">By Dan Nguyen Gia <img src="/images/lary-head.svg"
